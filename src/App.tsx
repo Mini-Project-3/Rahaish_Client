@@ -1,21 +1,14 @@
 import React from 'react';
+import Button from './SharedComponents/Button';
+import Footer from './SharedComponents/Footer';
+import MainCard from './SharedComponents/MainCard';
+import Seachbar from './SharedComponents/Seachbar';
+import SideBar from './SharedComponents/SideBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p className="bg-red-700">
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <SideBar></SideBar>
     </div>
   );
 }
