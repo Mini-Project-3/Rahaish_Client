@@ -1,21 +1,15 @@
 import React from 'react';
+import ForgotPassPage from './Pages/ForgotPassPage';
+import LoginPage from './Pages/LoginPage';
+import SignupPage from './Pages/SignupPage';
+//https://reactjs.org/docs/dom-elements.html#style
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p className="bg-red-700">
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LoginPage></LoginPage>
+      <SignupPage></SignupPage>
+      <ForgotPassPage></ForgotPassPage>
     </div>
   );
 }
