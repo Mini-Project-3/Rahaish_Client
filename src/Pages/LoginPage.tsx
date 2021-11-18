@@ -1,6 +1,8 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
 import * as yup from "yup";
+import { BASE_URL, LS_AUTH_TOKEN } from "../Constants/constants";
 interface Props {
 }
 const LoginPage: FC<Props> = (props) => {
@@ -13,8 +15,16 @@ const LoginPage: FC<Props> = (props) => {
 			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
 			password: yup.string().required("This field is required").min(8, ({ min }) => `Atleast ${min} characters`)
 		}),
-		onSubmit: (data) => {
-			console.log(data);
+		onSubmit: async (data) => {
+			const url = BASE_URL + "/login";
+			const response = await axios.post(url, data);
+			if (response.status === 200) {
+				localStorage.setItem(LS_AUTH_TOKEN, response.data.token);
+				window.location.href = "/forgotPassword";
+			}
+			else {
+				console.log(response.data);
+			}
 		},
 	})
 

@@ -1,7 +1,9 @@
 
+import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
 import * as yup from "yup";
+import { BASE_URL, LS_AUTH_TOKEN } from "../Constants/constants";
 interface Props {
 }
 const SignupPage: FC<Props> = (props) => {
@@ -11,7 +13,7 @@ const SignupPage: FC<Props> = (props) => {
 			password: "",
 			firstName: "",
 			lastName: "",
-			c_password: ""
+			// c_password: ""
 		},
 		validationSchema: yup.object().shape({
 			firstName: yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only')
@@ -27,11 +29,18 @@ const SignupPage: FC<Props> = (props) => {
 				/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
 				"must contain at least 8 chars, 1 upper, 1 number and 1 special"
 			).required("This field is required").min(8, ({ min }) => `Atleast ${min} characters`),
-			c_Password: yup.string().required('This field is required').oneOf([yup.ref("password"), null], "Passwords must match"),
+			// c_Password: yup.string().required('This field is required').oneOf([yup.ref("password"), null], "Passwords must match"),
 
 		}),
-		onSubmit: (data) => {
-			console.log(data);
+		onSubmit: async (data) => {
+			const url = BASE_URL + "/signup";
+			const response = await axios.post(url, data);
+			if (response.status === 200) {
+				localStorage.setItem(LS_AUTH_TOKEN, response.data.token);
+				window.location.href = "/forgotPassword";
+			} else {
+				console.log("error");
+			}
 		},
 	})
 	return (
@@ -108,7 +117,7 @@ const SignupPage: FC<Props> = (props) => {
 											/>
 											<div className="h-8 ">{touched.password && <div className="text-red-500 text-xs">{errors.password}</div>}</div>
 										</div>
-										<div className="md:ml-2 md:w-1/2">
+										{/* <div className="md:ml-2 md:w-1/2">
 											<label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="c_password">
 												Confirm Password
 											</label>
@@ -120,7 +129,7 @@ const SignupPage: FC<Props> = (props) => {
 												{...getFieldProps("c_password")}
 											/>
 										</div>
-										<div className="h-8">{touched.c_password && <div className="text-red-500 text-xs">{errors.c_password}</div>}</div>
+										<div className="h-8">{touched.c_password && <div className="text-red-500 text-xs">{errors.c_password}</div>}</div> */}
 									</div>
 									<div className="mb-6 text-center">
 										<button
