@@ -30,9 +30,8 @@ const SignupPage: FC<Props> = (props) => {
 			c_Password: yup.string().required('This field is required').oneOf([yup.ref("password"), null], "Passwords must match"),
 
 		}),
-		onSubmit: () => {
-			console.log("signup");
-
+		onSubmit: (data) => {
+			console.log(data);
 		},
 	})
 	return (

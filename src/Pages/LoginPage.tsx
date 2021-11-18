@@ -13,9 +13,8 @@ const LoginPage: FC<Props> = (props) => {
 			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
 			password: yup.string().required("This field is required").min(8, ({ min }) => `Atleast ${min} characters`)
 		}),
-		onSubmit: () => {
-			console.log("helllo");
-
+		onSubmit: (data) => {
+			console.log(data);
 		},
 	})
 
