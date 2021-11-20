@@ -3,18 +3,18 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        primary: "#064E3B",
+        secondary: "#afdeab"
+      },
       textColor: {
         yellow: {
-
           DEFAULT: '#b69100',
-
         }
       },
       backgroundColor: theme => ({
-
         'forgot': '#A629C2',
-        'forgotI':'#A32EFF',
-
+        'forgotI': '#A32EFF',
       }),
 
       animation: {
@@ -26,11 +26,10 @@ module.exports = {
           '100%': { transform: 'translateX(-100%)' },
         }
       },
-
-    },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+      variants: {
+        extend: {},
+      },
+      plugins: [],
+    }
+  }
 }

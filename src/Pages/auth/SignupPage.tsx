@@ -3,7 +3,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
 import * as yup from "yup";
-import { BASE_URL, LS_AUTH_TOKEN } from "../Constants/constants";
+import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 interface Props {
 }
 const SignupPage: FC<Props> = (props) => {
@@ -143,7 +143,7 @@ const SignupPage: FC<Props> = (props) => {
 									<div className="text-center">
 										<a
 											className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-											href="#"
+											href="/forgotPassword"
 										>
 											Forgot Password?
 										</a>
@@ -151,7 +151,7 @@ const SignupPage: FC<Props> = (props) => {
 									<div className="text-center">
 										<a
 											className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-											href="./index.html"
+											href="/login"
 										>
 											Already have an account? Login!
 										</a>

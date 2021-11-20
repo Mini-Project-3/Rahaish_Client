@@ -1,23 +1,23 @@
 import React from 'react';
-import ForgotPassPage from './Pages/ForgotPassPage';
-import LoginPage from './Pages/LoginPage';
-import SignupPage from './Pages/SignupPage';
 //https://reactjs.org/docs/dom-elements.html#style
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import WelcomePage from './Pages/auth/WelcomePage';
+import Auth from './Pages/auth/Auth';
+import AppContainer from './Pages/appContainer/AppContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
         <Switch>
-          <Route path="/login" exact>
-            <LoginPage></LoginPage>
+          <Route path="/" exact>
+            <WelcomePage></WelcomePage>
           </Route>
-          <Route path="/signup" exact>
-            <SignupPage></SignupPage>
+          <Route path={["/login", "/signup", "/forgotPassword"]} exact>
+            <Auth></Auth>
           </Route>
-          <Route path="/forgotPassword" exact>
-            <ForgotPassPage></ForgotPassPage>
+          <Route path={["/dashBoard", "/flat", "/property", "/plot"]}>
+            <AppContainer></AppContainer>
           </Route>
         </Switch>
       </BrowserRouter>
