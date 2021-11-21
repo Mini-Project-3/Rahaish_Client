@@ -4,7 +4,7 @@ interface Props {
 const WelcomePage: FC<Props> = (props) => {
     return (
         <div>
-            this is welcome page
+            this is welcome
         </div>
     );
 };
