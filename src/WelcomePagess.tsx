@@ -3,7 +3,7 @@ import { BsBuilding } from "react-icons/bs"
 import { AiFillCaretRight } from "react-icons/ai"
 interface Props {
 }
-const WelcomePage: FC<Props> = (props) => {
+const WelcomePagess: FC<Props> = (props) => {
     return (
         <div>
 
@@ -87,6 +87,6 @@ const WelcomePage: FC<Props> = (props) => {
         </div>
     );
 };
-WelcomePage.defaultProps = {
+WelcomePagess.defaultProps = {
 }
-export default memo(WelcomePage);
+export default memo(WelcomePagess);
