@@ -1,21 +1,20 @@
 import React from 'react';
+import Aboutus from './Aboutus';
+import BouncerCard from './BouncerCard';
+import OwnerForm from './OwnerForm';
+import PrimaryNav from './PrimaryNav';
+import Privacy from './Privacy';
+import ProfileCard from './ProfileCard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p className="bg-red-700">
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProfileCard></ProfileCard>
+      <BouncerCard></BouncerCard>
+      <PrimaryNav></PrimaryNav>
+      <OwnerForm></OwnerForm>
+      <Aboutus></Aboutus>
+      <Privacy></Privacy>
     </div>
   );
 }
