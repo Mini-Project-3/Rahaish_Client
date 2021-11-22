@@ -3,14 +3,16 @@ import AllCard from "../../Components/SharedComponents/AllCard";
 import MainCard from "../../Components/OtherComponents/WishlistCard";
 import Footer from "../../Components/SharedComponents/Footer";
 import Seachbar from "../../Components/SharedComponents/Seachbar";
+import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 interface Props {
 }
 const Plot: FC<Props> = (props) => {
     return (
         <div className="w-full">
-            <div className="pt-20 pb-10 px-10">
-                <Seachbar></Seachbar>
+            <div className="pt-20 pb-10 px-4">
+                <WelcomeHeader theme="bg-plot"></WelcomeHeader>
             </div>
+
             <div className="min-h-screen  justify-center items-center py-20">
                 <AllCard
                     propertyName="Radha krishna valley"

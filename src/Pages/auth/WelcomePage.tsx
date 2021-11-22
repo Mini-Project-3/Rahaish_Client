@@ -12,9 +12,7 @@ interface Props {
 const WelcomePage: FC<Props> = (props) => {
     return (
         <div>
-            <WelcomeHeader></WelcomeHeader>
-
-            <Seachbar />
+            <WelcomeHeader theme="bg-wel"></WelcomeHeader>
 
             <div className="pt-10">
                 <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif">Featured Collection</h1>

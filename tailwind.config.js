@@ -13,7 +13,11 @@ module.exports = {
         }
       },
       backgroundImage: {
-        'hero': "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v349-binn-02-halftonebackground_2.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=c9fd93558517209e7fc9f6aa89dbf192')",
+        'wel': "url('https://cdnb.artstation.com/p/assets/images/images/019/645/951/medium/jonas-barasch-cityscape-1500x750.jpg?1564419739')",
+        'dash': "url('https://wallpaperaccess.com/full/1966849.jpg')",
+        'plot': "url('https://www.wallpapertip.com/wmimgs/49-491881_retro-city-wallpaper-4k.jpg')",
+        'flat': "url('https://hdwallpaperim.com/wp-content/uploads/2017/08/23/473369-cityscape-neon-New_Retro_Wave-748x419.jpg')",
+        'property': "url('https://cdn4.vectorstock.com/i/1000x1000/80/33/cityscape-retro-style-vector-24198033.jpg')",
 
       },
       backgroundColor: theme => ({

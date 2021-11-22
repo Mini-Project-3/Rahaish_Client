@@ -3,14 +3,17 @@ import AllCard from "../../Components/SharedComponents/AllCard";
 import MainCard from "../../Components/OtherComponents/WishlistCard";
 import Footer from "../../Components/SharedComponents/Footer";
 import Seachbar from "../../Components/SharedComponents/Seachbar";
+import BouncerCard from "../../Components/DashboardComponents/BouncerCard";
+import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 interface Props {
 }
 const Dashboard: FC<Props> = (props) => {
     return (
         <div className="w-full">
-            <div className="pt-20 pb-10 px-10">
-                <Seachbar></Seachbar>
+            <div className="pt-20 pb-10 px-4">
+                <WelcomeHeader theme="bg-dash"></WelcomeHeader>
             </div>
+
             <div className="pb-10 pt-10">
                 <div className=" border-primary border-2 rounded-md sm:text-2xl md:text-4xl text-center  font-bold text-primary pt-5 pb-5">
                     Best Property Collection
@@ -268,6 +271,9 @@ const Dashboard: FC<Props> = (props) => {
                     facing="north"
                 ></AllCard>
 
+            </div>
+            <div>
+                <BouncerCard></BouncerCard>
             </div>
             <div className="pt-10">
                 <Footer></Footer>
