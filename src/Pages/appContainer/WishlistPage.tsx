@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import WishlistCard from "../../Components/DashboardComponents/WishlistCard";
+import WishlistCard from "../../Components/OtherComponents/WishlistCard";
 interface Props {
 }
 const WishlistPage: FC<Props> = (props) => {

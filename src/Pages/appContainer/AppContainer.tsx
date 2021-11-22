@@ -7,6 +7,7 @@ import Dashboard from "./Dashboard";
 import Flat from "./Flat";
 import Plot from "./Plot";
 import Property from "./Property";
+import UploadProperty from "./UploadProperty";
 import WishlistPage from "./WishlistPage";
 interface Props {
 }
@@ -32,6 +33,9 @@ const AppContainer: FC<Props> = (props) => {
                         </Route>
                         <Route path="/wishlist">
                             <WishlistPage></WishlistPage>
+                        </Route>
+                        <Route path="/uploadproperty">
+                            <UploadProperty></UploadProperty>
                         </Route>
                     </Switch>
                 </div>

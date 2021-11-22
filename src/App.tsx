@@ -16,7 +16,7 @@ function App() {
           <Route path={["/login", "/signup", "/forgotPassword"]} exact>
             <Auth></Auth>
           </Route>
-          <Route path={["/dashBoard", "/flat", "/property", "/plot", "/wishlist"]}>
+          <Route path={["/dashBoard", "/flat", "/property", "/plot", "/wishlist", "/uploadproperty"]}>
             <AppContainer></AppContainer>
           </Route>
         </Switch>

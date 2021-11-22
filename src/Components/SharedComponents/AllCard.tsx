@@ -1,4 +1,5 @@
 import { FC, memo } from "react";
+import Button from "./Button";
 interface Props {
     propertyName: string,
     image: string,
@@ -74,9 +75,9 @@ const AllCard: FC<Props> = (props) => {
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                             </svg>
                         </div>
-                        <div className="flex p-3 items-center">
-                            <p className="text-red-700 text-md font-semibold ">View Phone</p>
-                            <button className="border-red-700 font-semibold text-white bg-red-700 pt-3 pb-3 pl-8 pr-8 ml-5 rounded-full hover:text-red-700 hover:bg-white">Connect Now</button>
+                        <div className="flex p-3 items-center space-x-5">
+                            <Button children="View Phone" theme="secondary"></Button>
+                            <Button children="Contact Now" theme="primary"></Button>
                         </div>
                     </div>
 

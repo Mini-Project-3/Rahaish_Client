@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
-import AllCard from "../../Components/DashboardComponents/AllCard";
-import MainCard from "../../Components/DashboardComponents/WishlistCard";
+import AllCard from "../../Components/SharedComponents/AllCard";
+import MainCard from "../../Components/OtherComponents/WishlistCard";
 import Footer from "../../Components/SharedComponents/Footer";
 import Seachbar from "../../Components/SharedComponents/Seachbar";
 interface Props {
