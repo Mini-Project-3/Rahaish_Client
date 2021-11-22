@@ -16,11 +16,12 @@ function App() {
           <Route path={["/login", "/signup", "/forgotPassword"]} exact>
             <Auth></Auth>
           </Route>
-          <Route path={["/dashBoard", "/flat", "/property", "/plot"]}>
+          <Route path={["/dashBoard", "/flat", "/property", "/plot", "/wishlist"]}>
             <AppContainer></AppContainer>
           </Route>
         </Switch>
       </BrowserRouter>
+
     </div>
   );
 }

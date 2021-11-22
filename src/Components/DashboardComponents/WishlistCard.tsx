@@ -3,6 +3,7 @@ import { GiBed } from "react-icons/gi"
 import { FaBath, FaTrello } from "react-icons/fa"
 interface Props {
     propertyName: string,
+    image?: string,
     location: string,
     price: string,
     type: string,
@@ -10,7 +11,7 @@ interface Props {
     bath: number,
     area: number
 }
-const MainCard: FC<Props> = (props) => {
+const WishlistCard: FC<Props> = (props) => {
     return (
         <div>
             <div className="max-w-sm border border-primary rounded-md px-6 pt-6 pb-2 shadow-lg transform hover:scale-105 transition duration-500">
@@ -39,6 +40,6 @@ const MainCard: FC<Props> = (props) => {
         </div>
     );
 };
-MainCard.defaultProps = {
+WishlistCard.defaultProps = {
 }
-export default memo(MainCard);
+export default memo(WishlistCard);
