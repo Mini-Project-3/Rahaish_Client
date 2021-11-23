@@ -10,6 +10,7 @@ import Plot from "./Plot";
 import Property from "./Property";
 import UploadProperty from "./UploadProperty";
 import WishlistPage from "./WishlistPage";
+import InnerStructure from "../../Components/FlatInfoComponent/InnerStructure";
 interface Props {
 }
 const AppContainer: FC<Props> = (props) => {
@@ -38,6 +39,9 @@ const AppContainer: FC<Props> = (props) => {
                         </Route>
                         <Route path="/uploadproperty">
                             <UploadProperty></UploadProperty>
+                        </Route>
+                        <Route path="/innertemplate">
+                            <InnerStructure></InnerStructure>
                         </Route>
                     </Switch>
                 </div>

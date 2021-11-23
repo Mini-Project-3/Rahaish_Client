@@ -10,7 +10,11 @@ module.exports = {
       textColor: {
         yellow: {
           DEFAULT: '#b69100',
-        }
+          'greendark': '#064E3B',
+          'greenlight': '#afdeab',
+          'purple': '#5e23dc',
+          'greenHousing': '#1dd38f',
+        },
       },
       backgroundImage: {
         'wel': "url('https://cdnb.artstation.com/p/assets/images/images/019/645/951/medium/jonas-barasch-cityscape-1500x750.jpg?1564419739')",
@@ -23,8 +27,10 @@ module.exports = {
       backgroundColor: theme => ({
         'forgot': '#A629C2',
         'forgotI': '#A32EFF',
+        'purple': '#5e23dc',
+        'greenlight': '#afdeab',
+        'greenHousing': '#1dd38f',
       }),
-
       animation: {
         marquee: 'marquee 25s linear infinite',
       },

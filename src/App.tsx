@@ -5,6 +5,7 @@ import WelcomePage from './Pages/auth/WelcomePage';
 import Auth from './Pages/auth/Auth';
 import AppContainer from './Pages/appContainer/AppContainer';
 
+
 function App() {
   return (
     <div>
@@ -16,7 +17,7 @@ function App() {
           <Route path={["/login", "/signup", "/forgotPassword"]} exact>
             <Auth></Auth>
           </Route>
-          <Route path={["/dashBoard", "/flat", "/property", "/plot", "/wishlist", "/uploadproperty"]}>
+          <Route path={["/dashBoard", "/flat", "/property", "/plot", "/wishlist", "/uploadproperty", "/innertemplate"]}>
             <AppContainer></AppContainer>
           </Route>
         </Switch>
