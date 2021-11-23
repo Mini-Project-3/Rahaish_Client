@@ -1,17 +1,18 @@
 import { FC, memo } from "react";
 import AgentCard from "../../Components/OtherComponents/AgentCard";
 import Footer from "../../Components/SharedComponents/Footer";
-import Seachbar from "../../Components/SharedComponents/Seachbar";
 import FeaturedColl from "../../Components/WelcomeComponents/FeaturedColl";
 import InstaHover from "../../Components/WelcomeComponents/InstaHover";
 import Jumbotron1 from "../../Components/WelcomeComponents/Jumbotron1";
 import Jumbotron2 from "../../Components/WelcomeComponents/Jumbotron2";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
+import WelcomeNav from "../../Components/WelcomeComponents/WelcomeNav";
 interface Props {
 }
 const WelcomePage: FC<Props> = (props) => {
     return (
         <div>
+            <WelcomeNav />
             <WelcomeHeader theme="bg-wel"></WelcomeHeader>
 
             <div className="pt-10">

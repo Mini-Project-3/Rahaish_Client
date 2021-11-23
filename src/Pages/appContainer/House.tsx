@@ -6,7 +6,7 @@ import Seachbar from "../../Components/SharedComponents/Seachbar";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 interface Props {
 }
-const Property: FC<Props> = (props) => {
+const House: FC<Props> = (props) => {
     return (
         <div className="w-full">
             <div className="pt-20 pb-10 px-4">
@@ -99,6 +99,6 @@ const Property: FC<Props> = (props) => {
         </div>
     );
 };
-Property.defaultProps = {
+House.defaultProps = {
 }
-export default memo(Property);
+export default memo(House);
