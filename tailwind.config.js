@@ -18,10 +18,10 @@ module.exports = {
       },
       backgroundImage: {
         'wel': "url('https://cdnb.artstation.com/p/assets/images/images/019/645/951/medium/jonas-barasch-cityscape-1500x750.jpg?1564419739')",
-        'dash': "url('https://wallpaperaccess.com/full/1966849.jpg')",
-        'plot': "url('https://www.wallpapertip.com/wmimgs/49-491881_retro-city-wallpaper-4k.jpg')",
-        'flat': "url('https://hdwallpaperim.com/wp-content/uploads/2017/08/23/473369-cityscape-neon-New_Retro_Wave-748x419.jpg')",
-        'property': "url('https://cdn4.vectorstock.com/i/1000x1000/80/33/cityscape-retro-style-vector-24198033.jpg')",
+        'dash': "url('https://wallpaperaccess.com/full/153056.jpg')",
+        'plot': "url('https://wallpapercave.com/wp/wp2686720.jpg')",
+        'flat': "url('https://wallpaperaccess.com/full/153064.jpg')",
+        'property': "url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max')",
 
       },
       backgroundColor: theme => ({

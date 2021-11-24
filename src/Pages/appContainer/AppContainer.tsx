@@ -7,11 +7,10 @@ import PrimaryNav from "../../Components/SharedComponents/PrimaryNav";
 import Dashboard from "./Dashboard";
 import Flat from "./Flat";
 import Plot from "./Plot";
-import Property from "./House";
-import UploadProperty from "./UploadProperty";
 import WishlistPage from "./WishlistPage";
 import InnerStructure from "./InnerStructure";
 import House from "./House";
+import UploadHouse from "./UploadHouse";
 interface Props {
 }
 const AppContainer: FC<Props> = (props) => {
@@ -38,14 +37,8 @@ const AppContainer: FC<Props> = (props) => {
                         <Route path="/wishlist">
                             <WishlistPage></WishlistPage>
                         </Route>
-                        <Route path="/uploadplot">
-                            <UploadProperty></UploadProperty>
-                        </Route>
-                        <Route path="/uploadflat">
-                            <UploadProperty></UploadProperty>
-                        </Route>
                         <Route path="/uploadhouse">
-                            <UploadProperty></UploadProperty>
+                            <UploadHouse></UploadHouse>
                         </Route>
                         <Route path="/innertemplate">
                             <InnerStructure></InnerStructure>

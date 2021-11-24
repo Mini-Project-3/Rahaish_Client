@@ -1,12 +1,19 @@
 import React from 'react';
 //https://reactjs.org/docs/dom-elements.html#style
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import WelcomePage from './Pages/auth/WelcomePage';
 import Auth from './Pages/auth/Auth';
 import AppContainer from './Pages/appContainer/AppContainer';
-
+import { LS_AUTH_TOKEN } from './Constants/constants';
+import { axiosRequest, axiosResponse } from './axios/axios';
 
 function App() {
+
+  axiosRequest();
+  axiosResponse();
+
+  const token = localStorage.getItem(LS_AUTH_TOKEN);
+
   return (
     <div>
       <BrowserRouter>
@@ -15,10 +22,10 @@ function App() {
             <WelcomePage></WelcomePage>
           </Route>
           <Route path={["/login", "/signup", "/forgotPassword"]} exact>
-            <Auth></Auth>
+            {token ? <Redirect to="/dashboard" /> : <Auth></Auth>}
           </Route>
           <Route path={["/dashBoard", "/flat", "/house", "/plot", "/wishlist", "/uploadplot", "/uploadflat", "/uploadhouse", "/innertemplate"]}>
-            <AppContainer></AppContainer>
+            {token ? <AppContainer></AppContainer> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </BrowserRouter>

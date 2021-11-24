@@ -14,8 +14,8 @@ interface Props {
 }
 const AllCard: FC<Props> = (props) => {
     return (
-        <div className="p-10 w-full">
-            <div className="lg:flex justify-center py-2 px-2 border-2 border-gray-300 shadow-2xl">
+        <div className="p-5 w-full cursor-pointer">
+            <div className="lg:flex justify-center py-2 px-2 border-2 border-gray-300 hover:shadow-2xl">
 
                 <div className="lg:pl-0">
                     <div>

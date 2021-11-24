@@ -1,5 +1,6 @@
 import { FC, memo } from "react";
 import { Link } from "react-router-dom";
+import { LS_AUTH_TOKEN } from "../../Constants/constants";
 
 interface Props {
 }
@@ -9,7 +10,10 @@ const DropDown: FC<Props> = (props) => {
             <Link to="/uploadflat" className="text-gray-700 block px-4 py-2 text-sm hover:text-blue-600 hover:bg-gray-100" >Upload Flat</Link>
             <Link to="/uploadhouse" className="text-gray-700 block px-4 py-2 text-sm hover:text-blue-600 hover:bg-gray-100" >Upload House</Link>
             <Link to="/uploadplot" className="text-gray-700 block px-4 py-2 text-sm hover:text-blue-600 hover:bg-gray-100" >Upload Plot</Link>
-            <Link to="/login" className="text-gray-700 block px-4 py-2 text-sm hover:text-blue-600 hover:bg-gray-100" >Logout</Link>
+            <button className="text-gray-700 block px-4 py-2 text-sm hover:text-blue-600 hover:bg-gray-100" onClick={() => {
+                localStorage.removeItem(LS_AUTH_TOKEN);
+                window.location.href = "/login";
+            }} >Logout</button>
         </div>
     );
 };
