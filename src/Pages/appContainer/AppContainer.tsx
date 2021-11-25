@@ -11,6 +11,9 @@ import WishlistPage from "./WishlistPage";
 import InnerStructure from "./InnerStructure";
 import House from "./House";
 import UploadHouse from "./UploadHouse";
+import PlotDetailsForm from "./UploadPlot";
+import UploadPlot from "./UploadPlot";
+import UploadFlat from "./UploadFlat";
 interface Props {
 }
 const AppContainer: FC<Props> = (props) => {
@@ -39,6 +42,12 @@ const AppContainer: FC<Props> = (props) => {
                         </Route>
                         <Route path="/uploadhouse">
                             <UploadHouse></UploadHouse>
+                        </Route>
+                        <Route path="/uploadplot">
+                            <UploadPlot></UploadPlot>
+                        </Route>
+                        <Route path="/uploadflat">
+                            <UploadFlat></UploadFlat>
                         </Route>
                         <Route path="/innertemplate">
                             <InnerStructure></InnerStructure>

@@ -6,8 +6,8 @@ interface Props {
 const PrimaryNav: FC<Props> = (props) => {
     const [isOpen1, setIsOpen1] = useState(false);
     return (
-        <div className="sticky top-0 ">
-            <div className="flex justify-between bg-black p-2 sm:pl-10 sm:pr-10">
+        <div className="sticky top-0 z-40 ">
+            <div className="flex justify-between bg-gray-900 p-2 sm:pl-10 sm:pr-10">
                 <button className="flex ">
                     <img className="h-10 " src="https://designreset.com/cork/ltr/demo4/assets/img/logo.svg" alt="" />
                     <h1 className="text-2xl font-semibold text-white">Rahaish</h1>

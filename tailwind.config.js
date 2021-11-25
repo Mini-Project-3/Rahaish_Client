@@ -8,16 +8,15 @@ module.exports = {
         secondary: "#A78BFA"
       },
       textColor: {
-        yellow: {
-          DEFAULT: '#b69100',
-          'greendark': '#064E3B',
-          'greenlight': '#afdeab',
-          'purple': '#5e23dc',
-          'greenHousing': '#1dd38f',
-        },
+        DEFAULT: '#b69100',
+        'greendark': '#064E3B',
+        'greenlight': '#afdeab',
+        'purple': '#5e23dc',
+        'greenHousing': '#1dd38f',
+
       },
       backgroundImage: {
-        'wel': "url('https://cdnb.artstation.com/p/assets/images/images/019/645/951/medium/jonas-barasch-cityscape-1500x750.jpg?1564419739')",
+        'wel': "url('https://www.chennaiproperties.in/projectsgallery/2086/gallery/The_Ace_1.jpg')",
         'dash': "url('https://wallpaperaccess.com/full/153056.jpg')",
         'plot': "url('https://wallpapercave.com/wp/wp2686720.jpg')",
         'flat': "url('https://wallpaperaccess.com/full/153064.jpg')",

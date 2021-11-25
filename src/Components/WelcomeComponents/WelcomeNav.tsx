@@ -5,13 +5,13 @@ interface Props {
 }
 const WelcomeNav: FC<Props> = (props) => {
     return (
-        <div className="pt-5 pb-10">
+        <div className=" pb-10 sticky z-50 top-0">
             <nav className="bg-black text-white px-4 p-4">
                 <div className="flex items-center justify-between">
 
                     <div className="flex items-center">
                         <button className="flex ">
-                            <img className="h-10 " src="https://designreset.com/cork/ltr/demo4/assets/img/logo.svg" alt="" />
+                            <img className="h-10 w-10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBI3bJaGROWkrhoPeq-VW3NR0bOj6nBQaDG0BgOIzbbamuKT0W_AU6xwZ0ks6pcyG77vs&usqp=CAU" alt="abcd" />
                             <h1 className="text-2xl font-semibold text-white">Rahaish</h1>
                         </button>
                     </div>

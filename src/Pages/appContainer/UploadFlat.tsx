@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { BASE_URL } from "../../Constants/constants";
 interface Props {
 
+
 }
-const UploadHouse: FC<Props> = (props) => {
+const UploadFlat: FC<Props> = (props) => {
 
     const { handleSubmit, getFieldProps } = useFormik({
         initialValues: {
@@ -42,7 +43,7 @@ const UploadHouse: FC<Props> = (props) => {
                     <div className="grid grid-cols-1 gap-3 mt-4 md:grid-cols-2">
 
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >Name of Property</label>
+                            <label className=" text-sm font-bold text-gray-700" >Name of Flat</label>
                             <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Property Name" />
                         </div>
 
@@ -137,7 +138,7 @@ const UploadHouse: FC<Props> = (props) => {
         </div>
     );
 };
-UploadHouse.defaultProps = {
+UploadFlat.defaultProps = {
 }
-export default memo(UploadHouse);
+export default memo(UploadFlat);
 export { };

@@ -9,12 +9,12 @@ interface Props {
 }
 const SideBar: FC<Props> = (props) => {
     return (
-        <div className="h-screen top-28 sticky">
-            <div className="min-h-screen flex flex-row w-14 hover:w-64 md:w-64 bg-primary text-white">
+        <div className="h-screen top-28 sticky bg-gray-900 z-0">
+            <div className="min-h-screen flex flex-row w-14 hover:w-64 md:w-64  text-white">
                 <div className="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
-                    <ul className="flex flex-col py-4 space-y-1">
-                        <li>
-                            <Link to="/dashboard" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-secondary text-white-600 hover:text-primary border-l-4 border-transparent hover:border-green-700  pr-6">
+                    <ul className="flex flex-col  space-y-1 bg-gray-900">
+                        <li className=" pt-4">
+                            <Link to="/dashboard" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-200 text-white-600 hover:text-gray-900 border-l-4 border-transparent hover:border-green-700  pr-6">
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <MdSpaceDashboard></MdSpaceDashboard>
                                 </span>
