@@ -9,20 +9,20 @@ interface Props {
 }
 const SideBar: FC<Props> = (props) => {
     return (
-        <div className="h-screen top-28 sticky bg-gray-900 z-0">
+        <div className="h-screen top-24 sticky bg-gray-900 z-0">
             <div className="min-h-screen flex flex-row w-14 hover:w-64 md:w-64  text-white">
                 <div className="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
                     <ul className="flex flex-col  space-y-1 bg-gray-900">
                         <li className=" pt-4">
-                            <Link to="/dashboard" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-200 text-white-600 hover:text-gray-900 border-l-4 border-transparent hover:border-green-700  pr-6">
+                            <Link to="/dashboard" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-200 text-white-600 hover:text-gray-900 border-l-4 border-transparent hover:border-gray-500  pr-6">
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <MdSpaceDashboard></MdSpaceDashboard>
                                 </span>
-                                <span className="ml-2 text-sm font-semibold tracking-wide truncate"><button>Dashboard</button></span>
+                                <span className="ml-2 text-sm font-semibold tracking-wide truncate"><button >Dashboard</button></span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/flat" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-secondary text-white-600 hover:text-primary border-l-4 border-transparent hover:border-green-700  pr-6">
+                            <Link to="/flat" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-200 text-white-600 hover:text-gray-900 border-l-4 border-transparent hover:border-gray-500  pr-6">
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <RiBuilding4Fill></RiBuilding4Fill>
                                 </span>
@@ -31,7 +31,7 @@ const SideBar: FC<Props> = (props) => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/house" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-secondary text-white-600 hover:text-primary border-l-4 border-transparent hover:border-green-700  pr-6">
+                            <Link to="/house" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-200 text-white-600 hover:text-gray-900 border-l-4 border-transparent hover:border-gray-500  pr-6">
 
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <IoHome></IoHome>
@@ -43,7 +43,7 @@ const SideBar: FC<Props> = (props) => {
                         </li>
 
                         <li>
-                            <Link to="/plot" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-secondary text-white-600 hover:text-primary border-l-4 border-transparent hover:border-green-700  pr-6">
+                            <Link to="/plot" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-200 text-white-600 hover:text-gray-900 border-l-4 border-transparent hover:border-gray-500  pr-6">
 
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <BsSquareHalf></BsSquareHalf>
@@ -58,7 +58,7 @@ const SideBar: FC<Props> = (props) => {
                             <Link to="/login" onClick={() => {
                                 localStorage.removeItem(LS_AUTH_TOKEN);
                                 window.location.href = "/login";
-                            }} className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-secondary text-white-600 hover:text-primary border-l-4 border-transparent hover:border-green-700  pr-6">
+                            }} className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-200 text-white-600 hover:text-gray-900 border-l-4 border-transparent hover:border-gray-500 pr-6">
 
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <RiLogoutBoxFill></RiLogoutBoxFill>

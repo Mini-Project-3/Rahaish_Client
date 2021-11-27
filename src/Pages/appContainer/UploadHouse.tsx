@@ -42,8 +42,8 @@ const UploadHouse: FC<Props> = (props) => {
                     <div className="grid grid-cols-1 gap-3 mt-4 md:grid-cols-2">
 
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >Name of Property</label>
-                            <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Property Name" />
+                            <label className=" text-sm font-bold text-gray-700" >Name of House</label>
+                            <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter House Name" />
                         </div>
 
                         <div>

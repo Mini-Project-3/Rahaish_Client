@@ -12,7 +12,7 @@ const UploadFlat: FC<Props> = (props) => {
     const { handleSubmit, getFieldProps } = useFormik({
         initialValues: {
             name: "",
-            price: "",
+            rent: "",
             address: "",
             city: "",
             contact: "",
@@ -21,13 +21,12 @@ const UploadFlat: FC<Props> = (props) => {
             bedroom: "",
             bathroom: "",
             status: "",
-            facing: "",
             furnishing: "",
             description: "",
             // fileUpload: "",
         },
         onSubmit: async (data) => {
-            const url = BASE_URL + "/house-upload";
+            const url = BASE_URL + "/flat-upload";
             const response = await axios.post(url, data);
             console.log(response.data);
         },
@@ -38,18 +37,18 @@ const UploadFlat: FC<Props> = (props) => {
         <div className="flex space-x-4 mx-auto justify-center font-mono ">
             <div className="invisible lg:visible absolute lg:relative  w-1/2  mt-10  "><img className="p-10 h-full" src="https://profiles.sulekha.com/mstore/24036103/albums/default/thumbnailfull/flats.jpg" alt="" /></div>
             <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6  bg-secondary rounded-md shadow-md dark:bg-gray-800 mt-4">
-                <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your House</h1>
+                <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your Flat</h1>
                 <form className="p-2 md:p-4" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 gap-3 mt-4 md:grid-cols-2">
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Name of Flat</label>
-                            <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Property Name" />
+                            <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Flat Name" />
                         </div>
 
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >Price</label>
-                            <input id="price" required {...getFieldProps("price")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Price" />
+                            <label className=" text-sm font-bold text-gray-700" >Rent</label>
+                            <input id="rent" required {...getFieldProps("rent")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Rent/month" />
                         </div>
 
                         <div>
@@ -72,8 +71,8 @@ const UploadFlat: FC<Props> = (props) => {
                         </div>
 
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >No. of Floors</label>
-                            <input id="floor" required {...getFieldProps("floor")} type="number" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter No. of floors" />
+                            <label className=" text-sm font-bold text-gray-700" >No. of Floor</label>
+                            <input id="floor" required {...getFieldProps("floor")} type="number" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter No. of floor" />
                         </div>
 
                         <div>
@@ -89,11 +88,6 @@ const UploadFlat: FC<Props> = (props) => {
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Status</label>
                             <input id="status" required {...getFieldProps("status")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Completed  or under construction or furnished" />
-                        </div>
-
-                        <div>
-                            <label className=" text-sm font-bold text-gray-700" >Facing Direction</label>
-                            <input id="facing" required {...getFieldProps("facing")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Facing direction" />
                         </div>
 
                         <div>

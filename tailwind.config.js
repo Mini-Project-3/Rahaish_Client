@@ -15,6 +15,13 @@ module.exports = {
         'greenHousing': '#1dd38f',
 
       },
+      minWidth: {
+        '0': '0',
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+        'full': '100%',
+      },
       backgroundImage: {
         'wel': "url('https://www.chennaiproperties.in/projectsgallery/2086/gallery/The_Ace_1.jpg')",
         'dash': "url('https://wallpaperaccess.com/full/153056.jpg')",

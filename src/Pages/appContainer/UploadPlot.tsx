@@ -1,23 +1,28 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
+import { BASE_URL } from "../../Constants/constants";
 interface Props {
 }
 const UploadPlot: FC<Props> = (props) => {
     const { handleSubmit, getFieldProps } = useFormik({
         initialValues: {
             name: "",
-            owner: "",
+            price: "",
             address: "",
             city: "",
             contact: "",
+            area: "",
             openFaces: "",
             length: "",
             width: "",
             description: "",
             // fileUpload: "",
         },
-        onSubmit: (data) => {
-            console.log(data)
+        onSubmit: async (data) => {
+            const url = BASE_URL + "/plot-upload";
+            const response = await axios.post(url, data);
+            console.log(response.data);
         },
     }
     )
@@ -30,15 +35,14 @@ const UploadPlot: FC<Props> = (props) => {
                 <form className="  p-2 md:p-4" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 mx-auto gap-3 mt-4 sm:grid-cols-2">
 
-
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >Name of Property</label>
-                            <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Property Name" />
+                            <label className=" text-sm font-bold text-gray-700" >Name of Plot</label>
+                            <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Plot Name" />
                         </div>
 
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >Name of Owner</label>
-                            <input id="owner" required {...getFieldProps("owner")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Owner Name" />
+                            <label className=" text-sm font-bold text-gray-700" >Price</label>
+                            <input id="price" required {...getFieldProps("price")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Price" />
                         </div>
 
                         <div>
@@ -54,29 +58,40 @@ const UploadPlot: FC<Props> = (props) => {
                             <label className=" text-sm font-bold text-gray-700" >Contact Number</label>
                             <input id="contact" required {...getFieldProps("contact")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Your Contact number" />
                         </div>
+
+                        <div>
+                            <label className=" text-sm font-bold text-gray-700" >Area</label>
+                            <input id="area" required {...getFieldProps("area")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Area (sqft)" />
+                        </div>
+
+                        <div>
+                            <label className=" text-sm font-bold text-gray-700" >Length</label>
+                            <input id="length" required {...getFieldProps("length")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter the length (feets)" />
+                        </div>
+                        <div>
+                            <label className=" text-sm font-bold text-gray-700" >Width</label>
+                            <input id="width" required {...getFieldProps("width")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter the width (feets)" />
+                        </div>
+
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Open faces</label>
                             <input id="openFaces" required {...getFieldProps("openFaces")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter the Open Faces" />
                         </div>
 
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >Length(sq.ft)</label>
-                            <input id="length" required {...getFieldProps("length")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter the length" />
-                        </div>
-                        <div>
-                            <label className=" text-sm font-bold text-gray-700" >Width(sq.ft)</label>
-                            <input id="width" required {...getFieldProps("width")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter the width" />
+                            <label className=" text-sm font-bold text-gray-700" >Status</label>
+                            <input id="status" required {...getFieldProps("status")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Boundary or Not" />
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Description</label>
                             <textarea id="description" required {...getFieldProps("description")} className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Not more than 50 words..."></textarea>
                         </div>
-                        <div>
+                        {/* <div>
                             <label className="block  text-sm font-bold text-gray-700">
                                 Images
                             </label>
-                            {/* <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                            <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                 <div className="space-y-1 text-center">
                                     <svg className="mx-auto h-12 w-12 text-sm font-bold text-gray-700" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                                         <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -92,9 +107,9 @@ const UploadPlot: FC<Props> = (props) => {
                                         PNG, JPG, GIF up to 10MB
                                     </p>
                                 </div>
-                            </div> */}
-                        </div>
-                        <div className="flex md:mt-18">
+                            </div>
+                        </div> */}
+                        <div className="flex justify-end md:mt-36">
                             <a href="#"><span className="px-6 py-2 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600"><button type="submit">Upload & Submit</button></span> </a>
                         </div>
                     </div>

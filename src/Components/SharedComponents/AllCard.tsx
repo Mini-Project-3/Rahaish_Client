@@ -2,24 +2,24 @@ import { FC, memo } from "react";
 import Button from "./Button";
 interface Props {
     propertyName: string,
-    image: string,
-    location: string,
-    type: string
-    price: string,
-    status: string,
-    bath: number,
-    area: number,
-    description: string,
-    facing: string
+    image?: string,
+    location?: string,
+    type?: string
+    price?: string,
+    status?: string,
+    bath?: number,
+    area?: number,
+    description?: string,
+    facing?: string
 }
 const AllCard: FC<Props> = (props) => {
     return (
         <div className="p-5 w-full cursor-pointer">
             <div className="lg:flex justify-center py-2 px-2 border-2 border-gray-300 hover:shadow-2xl">
 
-                <div className="lg:pl-0">
-                    <div>
-                        <img className="h-64 w-full" src={props.image} alt="" />
+                <div className="lg:pl-0 w-1/2">
+                    <div className="h-64 w-64">
+                        <img className="" src={props.image} alt="" />
                     </div>
                     <div className="flex mt-5" >
                         <div className="border-2 p-2 border-purple-300 text-4xl bg-purple-300 text-white">P</div>
@@ -29,7 +29,7 @@ const AllCard: FC<Props> = (props) => {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="w-1/2">
                     <div className="lg:pl-8 pt-4 pb-4">
                         <p className="text-gray-600"><span className="text-black font-semibold">3 BHK Villa</span> in Omaxe Eternity</p>
                         <p className="text-gray-600">{props.location}</p>
@@ -59,11 +59,10 @@ const AllCard: FC<Props> = (props) => {
 
                     <hr className="ml-5" />
 
-                    <div className="lg:pl-8 pt-4 pb-4">
+                    <div className="min-w-3/4 lg:pl-8 pt-4 pb-4">
                         <p >{props.bath} Bathrooms | New | {props.facing}</p>
-                        <div className="">
-                            <p className="text-gray-600">{props.description}<span className="text-red-700">MORE</span></p>
-                        </div>
+                        <p className="text-gray-600">{props.description}<span className="text-red-700">MORE</span></p>
+
                     </div>
 
                     <div className="lg:flex lg:pl-8 justify-between items-center pt-4 pb-4">
