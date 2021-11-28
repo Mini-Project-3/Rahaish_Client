@@ -1,11 +1,9 @@
 import { FC, memo, useEffect, useState } from "react";
-import AllCard from "../../Components/SharedComponents/AllCard";
-import MainCard from "../../Components/OtherComponents/WishlistCard";
 import Footer from "../../Components/SharedComponents/Footer";
-import Seachbar from "../../Components/SharedComponents/Seachbar";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 import axios from "axios";
+import HouseCard from "../../Components/SharedComponents/HouseCard";
 interface Props {
 }
 const House: FC<Props> = (props) => {
@@ -39,17 +37,22 @@ const House: FC<Props> = (props) => {
 
                 {
                     response?.map((item) => {
-                        return <AllCard
+                        return <HouseCard
                             propertyName={item?.name}
                             image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
-                            location={item?.address}
+                            address={item?.address}
+                            city={item?.city}
                             status={item?.status}
                             price={item?.price}
-                            type="Sale"
                             bath={item?.bathroom}
                             area={item?.area}
                             description={item?.description}
+                            furnishing={item?.furnishing}
                             facing={item?.facing}
+                            contact={item?.contact}
+                            floor={item?.floor}
+                            bed={item?.bed}
+
                         />
                     })
                 }

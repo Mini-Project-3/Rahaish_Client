@@ -4,6 +4,7 @@ import Footer from "../../Components/SharedComponents/Footer";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import axios from "axios";
 import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
+import FlatCard from "../../Components/SharedComponents/FlatCard";
 interface Props {
 }
 const Flat: FC<Props> = (props) => {
@@ -35,26 +36,34 @@ const Flat: FC<Props> = (props) => {
 
                 {
                     response?.map((item) => {
-                        return <AllCard
+                        return <FlatCard
                             propertyName={item?.name}
                             image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
-                            location={item?.address}
+                            address={item?.address}
+                            city={item?.city}
                             status={item?.status}
-                            price={item?.price}
-                            type="Sale"
+                            rent={item?.rent}
                             bath={item?.bathroom}
                             area={item?.area}
                             description={item?.description}
-                            facing={item?.facing}
+                            furnishing={item?.furnishing}
+                            contact={item?.contact}
+                            floor={item?.floor}
+                            bed={item?.bed}
+
                         />
                     })
                 }
 
 
             </div>
+
+
             <div className="pt-10">
                 <Footer></Footer>
             </div>
+
+
         </div>
     );
 };

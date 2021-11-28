@@ -6,6 +6,7 @@ import Seachbar from "../../Components/SharedComponents/Seachbar";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import axios from "axios";
 import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
+import PlotCard from "../../Components/SharedComponents/PlotCard";
 interface Props {
 }
 const Plot: FC<Props> = (props) => {
@@ -36,17 +37,18 @@ const Plot: FC<Props> = (props) => {
             <div className="min-h-screen  justify-center items-center py-20">
                 {
                     response?.map((item) => {
-                        return <AllCard
+                        return <PlotCard
                             propertyName={item?.name}
                             image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
-                            location={item?.address}
+                            address={item?.address}
+                            city={item?.city}
                             status={item?.status}
                             price={item?.price}
-                            type="Sale"
-                            bath={item?.bathroom}
+                            length={item?.length}
+                            width={item?.width}
                             area={item?.area}
                             description={item?.description}
-                            facing={item?.facing}
+                            openFaces={item?.openFaces}
                         />
                     })
                 }

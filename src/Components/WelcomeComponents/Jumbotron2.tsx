@@ -8,10 +8,10 @@ const Jumbotron2: FC<Props> = (props) => {
         <>
             <div className="relative pt-12 pb-10 bg-blueGray-50">
                 <div className="items-center flex flex-wrap">
-                    <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
+                    <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
                         <img alt="..." className="w-full rounded-lg shadow-lg" src="https://i.pinimg.com/originals/61/7b/f7/617bf70a92c211c97ef30f9fd7a37290.jpg" />
                     </div>
-                    <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
+                    <div className="w-full md:w-6/12 ml-auto mr-auto px-4">
                         <div className="md:pr-12">
                             <div className="text-purple-900 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blue-400 mt-8">
                                 <BsBuilding></BsBuilding>

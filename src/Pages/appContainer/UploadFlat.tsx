@@ -34,7 +34,7 @@ const UploadFlat: FC<Props> = (props) => {
     )
 
     return (
-        <div className="flex space-x-4 mx-auto justify-center font-mono ">
+        <div className="flex space-x-4 mx-auto justify-center font-mono  ">
             <div className="invisible lg:visible absolute lg:relative  w-1/2  mt-10  "><img className="p-10 h-full" src="https://profiles.sulekha.com/mstore/24036103/albums/default/thumbnailfull/flats.jpg" alt="" /></div>
             <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6  bg-secondary rounded-md shadow-md dark:bg-gray-800 mt-4">
                 <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your Flat</h1>

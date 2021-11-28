@@ -1,6 +1,7 @@
 import { FC, memo } from "react";
 import { Link } from "react-router-dom";
 import Button from "../SharedComponents/Button";
+import LOGO from "../../images/Logo.png";
 interface Props {
 }
 const WelcomeNav: FC<Props> = (props) => {
@@ -11,8 +12,8 @@ const WelcomeNav: FC<Props> = (props) => {
 
                     <div className="flex items-center">
                         <button className="flex ">
-                            <img className="h-10 w-10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBI3bJaGROWkrhoPeq-VW3NR0bOj6nBQaDG0BgOIzbbamuKT0W_AU6xwZ0ks6pcyG77vs&usqp=CAU" alt="abcd" />
-                            <h1 className="text-2xl font-semibold text-white">Rahaish</h1>
+                            <img className="h-10 w-10" src={LOGO} alt="logo.png" />
+                            <h1 className="text-2xl font-semibold text-white p-2">Rahaish</h1>
                         </button>
                     </div>
                     <div className="flex items-center space-x-6">

@@ -17,12 +17,12 @@ const AllCard: FC<Props> = (props) => {
         <div className="p-5 w-full cursor-pointer">
             <div className="lg:flex justify-center py-2 px-2 border-2 border-gray-300 hover:shadow-2xl">
 
-                <div className="lg:pl-0 w-1/2">
-                    <div className="h-64 w-64">
+                <div className="lg:pl-0 w-1/2 ">
+                    <div className="">
                         <img className="" src={props.image} alt="" />
                     </div>
                     <div className="flex mt-5" >
-                        <div className="border-2 p-2 border-purple-300 text-4xl bg-purple-300 text-white">P</div>
+
                         <div className="mt-2.5 ml-4">
                             <div className="text-xl font-bold">{props.propertyName}</div>
                             <div><p className="text-xs">AGENT</p></div>
