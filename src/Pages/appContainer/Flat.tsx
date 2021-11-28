@@ -1,5 +1,4 @@
 import { FC, memo, useEffect, useState } from "react";
-import AllCard from "../../Components/SharedComponents/AllCard";
 import Footer from "../../Components/SharedComponents/Footer";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import axios from "axios";
@@ -49,7 +48,7 @@ const Flat: FC<Props> = (props) => {
                             furnishing={item?.furnishing}
                             contact={item?.contact}
                             floor={item?.floor}
-                            bed={item?.bed}
+                            bed={item?.bedroom}
 
                         />
                     })

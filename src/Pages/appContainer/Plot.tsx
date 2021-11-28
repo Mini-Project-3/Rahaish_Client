@@ -1,5 +1,4 @@
 import { FC, memo, useEffect, useState } from "react";
-import AllCard from "../../Components/SharedComponents/AllCard";
 import MainCard from "../../Components/OtherComponents/WishlistCard";
 import Footer from "../../Components/SharedComponents/Footer";
 import Seachbar from "../../Components/SharedComponents/Seachbar";

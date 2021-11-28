@@ -26,31 +26,31 @@ const AppContainer: FC<Props> = (props) => {
                 <div className="flex flex-row">
                     <SideBar></SideBar>
                     <Switch>
-                        <Route path="/dashboard">
+                        <Route exact path="/dashboard">
                             <Dashboard></Dashboard>
                         </Route>
-                        <Route path="/plot">
+                        <Route exact path="/plot">
                             <Plot></Plot>
                         </Route>
-                        <Route path="/house">
+                        <Route exact path="/house">
                             <House></House>
                         </Route>
-                        <Route path="/flat">
+                        <Route exact path="/flat">
                             <Flat></Flat>
                         </Route>
-                        <Route path="/wishlist">
+                        <Route exact path="/wishlist">
                             <WishlistPage></WishlistPage>
                         </Route>
-                        <Route path="/uploadhouse">
+                        <Route exact path="/uploadhouse">
                             <UploadHouse></UploadHouse>
                         </Route>
-                        <Route path="/uploadplot">
+                        <Route exact path="/uploadplot">
                             <UploadPlot></UploadPlot>
                         </Route>
-                        <Route path="/uploadflat">
+                        <Route exact path="/uploadflat">
                             <UploadFlat></UploadFlat>
                         </Route>
-                        <Route path="/innertemplate">
+                        <Route exact path="/house/:id">
                             <InnerStructure></InnerStructure>
                         </Route>
                     </Switch>

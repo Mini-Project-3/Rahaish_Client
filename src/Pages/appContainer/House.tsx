@@ -4,6 +4,7 @@ import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 import axios from "axios";
 import HouseCard from "../../Components/SharedComponents/HouseCard";
+import { Link } from "react-router-dom";
 interface Props {
 }
 const House: FC<Props> = (props) => {
@@ -37,7 +38,7 @@ const House: FC<Props> = (props) => {
 
                 {
                     response?.map((item) => {
-                        return <HouseCard
+                        return <Link to={`/house/${item.house_id}`}> <HouseCard
                             propertyName={item?.name}
                             image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
                             address={item?.address}
@@ -51,9 +52,10 @@ const House: FC<Props> = (props) => {
                             facing={item?.facing}
                             contact={item?.contact}
                             floor={item?.floor}
-                            bed={item?.bed}
+                            bed={item?.bedroom}
 
                         />
+                        </Link>
                     })
                 }
 

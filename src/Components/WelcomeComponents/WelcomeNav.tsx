@@ -6,7 +6,7 @@ interface Props {
 }
 const WelcomeNav: FC<Props> = (props) => {
     return (
-        <div className=" pb-10 sticky z-50 top-0">
+        <div className="pb-10 sticky z-50 top-0">
             <nav className="bg-black text-white px-4 p-4">
                 <div className="flex items-center justify-between">
 

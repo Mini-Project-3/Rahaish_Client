@@ -24,7 +24,7 @@ function App() {
           <Route path={["/login", "/signup", "/forgotPassword"]} exact>
             {token ? <Redirect to="/dashboard" /> : <Auth></Auth>}
           </Route>
-          <Route path={["/dashBoard", "/flat", "/house", "/plot", "/wishlist", "/uploadplot", "/uploadflat", "/uploadhouse", "/uploadplot", "/innertemplate"]}>
+          <Route path={["/dashBoard", "/flat", "/house", "/plot", "/wishlist", "/uploadplot", "/uploadflat", "/uploadhouse", "/uploadplot", "/house/:id"]}>
             {token ? <AppContainer></AppContainer> : <Redirect to="/login" />}
           </Route>
         </Switch>
