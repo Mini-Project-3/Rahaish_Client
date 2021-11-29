@@ -10,7 +10,7 @@ interface Props {
 const SideBar: FC<Props> = (props) => {
     return (
         <div className="h-screen top-24 sticky bg-gray-900 z-0">
-            <div className="min-h-screen flex flex-row w-14 hover:w-64 md:w-64  text-white">
+            <div className="min-h-screen flex flex-row w-14 hover:w-64 lg:w-64  text-white">
                 <div className="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
                     <ul className="flex flex-col  space-y-1 bg-gray-900">
                         <li className=" pt-4">
@@ -27,7 +27,7 @@ const SideBar: FC<Props> = (props) => {
                                     <RiBuilding4Fill></RiBuilding4Fill>
                                 </span>
                                 <span className="ml-2 text-sm font-semibold tracking-wide truncate"><button>Flat</button></span>
-                                <span className="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-800 bg-indigo-50 rounded-full">Rent</span>
+                                <span className="hidden lg:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-800 bg-indigo-50 rounded-full">Rent</span>
                             </Link>
                         </li>
                         <li>
@@ -37,7 +37,7 @@ const SideBar: FC<Props> = (props) => {
                                     <IoHome></IoHome>
                                 </span>
                                 <span className="ml-2  text-sm font-semibold tracking-wide truncate"><button>House</button></span>
-                                <span className="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-800 bg-indigo-50 rounded-full">Sale</span>
+                                <span className="hidden lg:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-800 bg-indigo-50 rounded-full">Sale</span>
 
                             </Link>
                         </li>
@@ -49,7 +49,7 @@ const SideBar: FC<Props> = (props) => {
                                     <BsSquareHalf></BsSquareHalf>
                                 </span>
                                 <span className="ml-2 text-sm font-semibold tracking-wide truncate"><button>Plot</button></span>
-                                <span className="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-800 bg-indigo-50 rounded-full">Sale</span>
+                                <span className="hidden lg:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-800 bg-indigo-50 rounded-full">Sale</span>
 
                             </Link>
                         </li>

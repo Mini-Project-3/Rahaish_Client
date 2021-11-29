@@ -28,7 +28,7 @@ const UploadFlat: FC<Props> = (props) => {
         onSubmit: async (data) => {
             const url = BASE_URL + "/flat-upload";
             const response = await axios.post(url, data);
-            console.log(response.data);
+            window.location.href = "/dashboard"
         },
     }
     )
@@ -71,7 +71,7 @@ const UploadFlat: FC<Props> = (props) => {
                         </div>
 
                         <div>
-                            <label className=" text-sm font-bold text-gray-700" >No. of Floor</label>
+                            <label className=" text-sm font-bold text-gray-700" >Floor of Flat</label>
                             <input id="floor" required {...getFieldProps("floor")} type="number" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter No. of floor" />
                         </div>
 

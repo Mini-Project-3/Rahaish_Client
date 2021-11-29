@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import Button from "./Button";
+import Button from "../SharedComponents/Button";
 interface Props {
     propertyName: string,
     price: string,

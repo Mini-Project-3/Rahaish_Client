@@ -1,10 +1,10 @@
-  import { FC, memo } from "react";
+import { FC, memo } from "react";
 interface Props {
+  contact: string
 }
 const ContactOwnerForm: FC<Props> = (props) => {
   return (
-    <div className=" md:sticky inset-0 bg-gray-100">
-
+    <div className=" md:sticky top-32 bg-gray-100">
       <div className="md:px-20 py-4 invisible md:visible absolute md:relative ">
         <div className="p-5 w-full max-w-lg border-0 rounded-lg shadow-lg bg-white  ">
           <div className="pb-5  w-full items-center">
@@ -22,7 +22,7 @@ const ContactOwnerForm: FC<Props> = (props) => {
               <div>
                 <h1 className="font-semibold text-gray-800">Ajay Singhal</h1>
                 <p className="text-gray-500">Owner</p>
-                <p className="font-bold">+91701777....</p>
+                <p className="font-bold">+91 {props.contact}</p>
               </div>
             </div>
             <h1 className="font-bold pt-5 text-base">Please share your contact</h1>
@@ -42,10 +42,10 @@ const ContactOwnerForm: FC<Props> = (props) => {
             <input className="font-bold mt-1 bg-purple" type="checkbox" name="" id="" />
             <div >
               <p className="font-semibold font-serif sm:text-sm text-xs ">I agree to be contacted by Housing and other owner via</p>
-             
-                <img className="h-6 w-6" src="https://img.icons8.com/color/48/000000/whatsapp.png" />
-                <p className="font-semibold font-serif sm:text-sm text-xs">WhatsApp,SMS,phone,email etc</p>
-            
+
+              <img className="h-6 w-6" src="https://img.icons8.com/color/48/000000/whatsapp.png" />
+              <p className="font-semibold font-serif sm:text-sm text-xs">WhatsApp,SMS,phone,email etc</p>
+
             </div>
           </div>
           <button className="border-0 border-purple bg-purple h-14 w-full hover:bg-indigo-800 ">

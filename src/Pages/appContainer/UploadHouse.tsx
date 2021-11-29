@@ -28,7 +28,6 @@ const UploadHouse: FC<Props> = (props) => {
         onSubmit: async (data) => {
             const url = BASE_URL + "/house-upload";
             const response = await axios.post(url, data);
-            console.log(response.data);
             window.location.href = "/dashboard"
         },
     }

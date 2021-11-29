@@ -1,7 +1,17 @@
 import { FC, memo } from "react";
 interface Props {
+    name: string,
+    address: string,
+    city: string,
+    price: string,
+    area: string,
+    facing: string,
+    bed: number,
+    bath: number,
+    description: string,
+    floor: number,
 }
-const Sections: FC<Props> = (props) => {
+const HouseSection: FC<Props> = (props) => {
 
     return (
         <div className=" ">
@@ -17,11 +27,11 @@ const Sections: FC<Props> = (props) => {
                             <div>
                                 <li className=" p-5">
                                     <p className="text-gray-400 font-semibold ">Project Name</p>
-                                    <p className=" text-base font-medium"><a href="#">Omaxe Eternity</a></p>
+                                    <p className=" text-base font-medium cursor-pointer">{props.name}</p>
                                 </li>
                                 <li className=" p-5">
                                     <p className="text-gray-400 font-semibold ">Price</p>
-                                    <p className=" text-base font-medium">&#x20b9;14.0 L </p>
+                                    <p className=" text-base font-medium">&#x20b9;{props.price} </p>
                                 </li>
                                 <li className=" p-5">
                                     <p className="text-gray-400 font-semibold ">Rent Price</p>
@@ -29,7 +39,7 @@ const Sections: FC<Props> = (props) => {
                                 </li>
                                 <li className=" p-5">
                                     <p className="text-gray-400 font-semibold ">Bedrooms</p>
-                                    <p className=" text-base font-medium">2 </p>
+                                    <p className=" text-base font-medium">{props.bed}</p>
                                 </li>
                                 <li className=" p-5">
                                     <p className="text-gray-400 font-semibold ">Parking</p>
@@ -43,15 +53,15 @@ const Sections: FC<Props> = (props) => {
                                 </li>
                                 <li className=" p-5">
                                     <p className="text-gray-400 font-semibold ">Carpet Area</p>
-                                    <p className=" text-base font-medium">700 sq.ft </p>
+                                    <p className=" text-base font-medium">{props.area} sq.ft </p>
                                 </li>
                                 <li className=" p-5">
                                     <p className="text-gray-400 font-semibold ">Bathrooms</p>
-                                    <p className=" text-base font-medium">1 </p>
+                                    <p className=" text-base font-medium">{props.bath} </p>
                                 </li>
                                 <li className=" p-5">
-                                    <p className="text-gray-400 font-semibold ">Balcony</p>
-                                    <p className=" text-base font-medium">No </p>
+                                    <p className="text-gray-400 font-semibold ">Floors</p>
+                                    <p className=" text-base font-medium">{props.floor} </p>
                                 </li>
                                 <li className=" p-5">
                                     <p className="text-gray-400  font-semibold ">Added</p>
@@ -60,14 +70,10 @@ const Sections: FC<Props> = (props) => {
                             </div>
                         </div>
                         <div className=" p-5 pb-3">
-                            <h1 className=" font-semibold text-2xl md:p-5 pb-3">About this Property</h1>
-                            <p className=" invisible absolute md:relative md:visible p-5 text-base  text-gray-400 font-semibold">2 BHK Apartment for sale in Girdharpur, Mathura with modern-day amenities. The Apartment is in Omaxe which is a promising investment destination in Mathura. This might be your chance to grab the best 2 BHK property for sale in Girdharpur. The property is on floor 3 and the total number of floors is 8. This 2 BHK Apartment is available at a reasonable price of Rs 14.0 L. It is a very spacious property, spread over 700 Square feet. The built-up area is 750 Square feet. An attached servant room is available with this property. This property has provision for 1 bathroom. This property is auspiciously built and is North-East-facing</p>
-                            <p className=" visible md:invisible text-base text-gray-400 font-semibold">2 BHK Apartment for sale in Girdharpur, Mathura with modern-day amenities. The Apartment is in Girdharpur which is a promising investment destination in Mathura. This might be your chance to grab the best 2 BHK property for sale in Girdharpur</p>
+                            <h1 className=" font-semibold text-2xl md:p-5 pb-2">About this Property</h1>
+                            <p className="h-28 bg-gray-200 border-2 border-gray-300 rounded-sm overflow-scroll p-2 text-base  text-gray-600 font-semibold">{props.name} for sale in {props.address}, {props.city} with modern-day amenities. The Apartment is in {props.address} which is a promising investment destination in {props.city}. This might be your chance to grab the best property for sale in {props.address}. The total number of floors is {props.floor}. This is available at a reasonable price of Rs {props.price}. It is a very spacious property, spread over {props.area} Square feet. An attached servant room is available with this property. This property has provision for {props.bath} bathroom. This property is auspiciously built and is {props.facing}.</p>
                         </div>
                     </div>
-
-
-
 
                     {/* Furnishings */}
                     <div className="bg-gray-100 pt-6 " id="furnishing">
@@ -194,18 +200,18 @@ const Sections: FC<Props> = (props) => {
 
 
                         </div>
-                        </div>
                     </div>
-
                 </div>
-
 
             </div>
 
 
-        
+        </div>
+
+
+
     )
 };
-Sections.defaultProps = {
+HouseSection.defaultProps = {
 }
-export default memo(Sections);
+export default memo(HouseSection);

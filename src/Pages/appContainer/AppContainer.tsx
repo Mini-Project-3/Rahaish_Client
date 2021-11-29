@@ -4,16 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 import SecondaryNav from "../../Components/SharedComponents/SecondaryNav";
 import SideBar from "../../Components/SharedComponents/SideBar";
 import PrimaryNav from "../../Components/SharedComponents/PrimaryNav";
-import Dashboard from "./Dashboard";
-import Flat from "./Flat";
-import Plot from "./Plot";
 import WishlistPage from "./WishlistPage";
-import InnerStructure from "./InnerStructure";
-import House from "./House";
 import UploadHouse from "./UploadHouse";
-import PlotDetailsForm from "./UploadPlot";
 import UploadPlot from "./UploadPlot";
 import UploadFlat from "./UploadFlat";
+import DashboardPage from "./DashboardPage";
+import FlatPage from "./FlatPage";
+import HousePage from "./HousePage";
+import PlotPage from "./PlotPage";
+import HouseId from "./HouseId";
+import FlatId from "./FlatId";
 
 interface Props {
 }
@@ -27,16 +27,16 @@ const AppContainer: FC<Props> = (props) => {
                     <SideBar></SideBar>
                     <Switch>
                         <Route exact path="/dashboard">
-                            <Dashboard></Dashboard>
+                            <DashboardPage></DashboardPage>
                         </Route>
                         <Route exact path="/plot">
-                            <Plot></Plot>
+                            <PlotPage></PlotPage>
                         </Route>
                         <Route exact path="/house">
-                            <House></House>
+                            <HousePage></HousePage>
                         </Route>
                         <Route exact path="/flat">
-                            <Flat></Flat>
+                            <FlatPage></FlatPage>
                         </Route>
                         <Route exact path="/wishlist">
                             <WishlistPage></WishlistPage>
@@ -51,7 +51,10 @@ const AppContainer: FC<Props> = (props) => {
                             <UploadFlat></UploadFlat>
                         </Route>
                         <Route exact path="/house/:id">
-                            <InnerStructure></InnerStructure>
+                            <HouseId></HouseId>
+                        </Route>
+                        <Route exact path="/flat/:id">
+                            <FlatId></FlatId>
                         </Route>
                     </Switch>
                 </div>

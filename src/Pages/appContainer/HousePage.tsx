@@ -1,14 +1,13 @@
 import { FC, memo, useEffect, useState } from "react";
-import MainCard from "../../Components/OtherComponents/WishlistCard";
 import Footer from "../../Components/SharedComponents/Footer";
-import Seachbar from "../../Components/SharedComponents/Seachbar";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
+import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 import axios from "axios";
-import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
-import PlotCard from "../../Components/SharedComponents/PlotCard";
+import HouseCard from "../../Components/HouseComponents/HouseCard";
+import { Link } from "react-router-dom";
 interface Props {
 }
-const Plot: FC<Props> = (props) => {
+const HousePage: FC<Props> = (props) => {
     const token = localStorage.getItem(LS_AUTH_TOKEN);
     console.log("Token ", token)
 
@@ -16,7 +15,7 @@ const Plot: FC<Props> = (props) => {
 
     useEffect(() => {
         async function fetchData() {
-            const url = BASE_URL + "/my-plot";
+            const url = BASE_URL + "/my-house";
             try {
                 const response = await axios.get(url, { headers: { 'Content-Type': 'application/json', 'Authorization': token! } });
                 console.log(response.data);
@@ -27,31 +26,37 @@ const Plot: FC<Props> = (props) => {
         }
         fetchData();
     }, [])
+
     return (
         <div className="w-full">
             <div className="pt-20 pb-10 px-4">
-                <WelcomeHeader theme="bg-plot"></WelcomeHeader>
+                <WelcomeHeader theme="bg-property"></WelcomeHeader>
             </div>
 
+
             <div className="min-h-screen  justify-center items-center py-20">
+
                 {
                     response?.map((item) => {
-                        return <PlotCard
+                        return <Link to={`/house/${item.house_id}`}> <HouseCard
                             propertyName={item?.name}
                             image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
                             address={item?.address}
                             city={item?.city}
                             status={item?.status}
                             price={item?.price}
-                            length={item?.length}
-                            width={item?.width}
+                            bath={item?.bathroom}
                             area={item?.area}
                             description={item?.description}
-                            openFaces={item?.openFaces}
+                            furnishing={item?.furnishing}
+                            facing={item?.facing}
+                            contact={item?.contact}
+                            floor={item?.floor}
+                            bed={item?.bedroom}
                         />
+                        </Link>
                     })
                 }
-
 
             </div>
             <div className="pt-10">
@@ -60,6 +65,6 @@ const Plot: FC<Props> = (props) => {
         </div>
     );
 };
-Plot.defaultProps = {
+HousePage.defaultProps = {
 }
-export default memo(Plot);
+export default memo(HousePage);

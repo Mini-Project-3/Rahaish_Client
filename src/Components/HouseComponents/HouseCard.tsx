@@ -1,8 +1,8 @@
 import { FC, memo } from "react";
-import Button from "./Button";
+import Button from "../SharedComponents/Button";
 interface Props {
     propertyName: string,
-    rent: string,
+    price: string,
     image?: string,
     address: string,
     city: string,
@@ -12,11 +12,11 @@ interface Props {
     bath: number,
     bed: number,
     status: string,
-    furnishing: string
+    furnishing: string,
+    facing: string;
     description: string,
-
 }
-const FlatCard: FC<Props> = (props) => {
+const HouseCard: FC<Props> = (props) => {
     return (
         <div className="px-5 pb-5">
             <div className=" p-5 hover:shadow-md border border-gray-700">
@@ -29,8 +29,8 @@ const FlatCard: FC<Props> = (props) => {
                         <h2 className=" text-gray-700 text-base font-normal">{props.address}, {props.city}</h2>
                         <div className=" flex justify-between pt-2 pb-2 border-t-2 border-b-2 border-gray-200">
                             <div className=" ">
-                                <h1 className=" text-lg font-semibold">&#8377; {props.rent}</h1>
-                                <p className=" text-gray-600">per month</p>
+                                <h1 className=" text-lg font-semibold">&#8377; {props.price}</h1>
+                                <p className=" text-gray-600">21 k/sqft</p>
                             </div>
                             <div className=" ">
                                 <h1 className=" text-lg font-semibold">{props.area}</h1>
@@ -44,7 +44,7 @@ const FlatCard: FC<Props> = (props) => {
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                             </svg></div>
                         </div>
-                        <div className=" pt-3 font-semibold pb-3 "> <span className="p-1 sm:p-3 sm:pl-0 pl-0"> {props.bath} Bathrooms</span>   |   <span className=" p-1 sm:p-3"> {props.bed} Bedrooms</span>   |   <span className="p-1 sm:p-3"> {props.furnishing}</span></div>
+                        <div className=" pt-3 font-semibold pb-3 "> <span className="p-1 sm:p-3 sm:pl-0 pl-0"> {props.bath} Bathrooms</span>   |   <span className=" p-1 sm:p-3"> {props.bed} Bedrooms</span>   |   <span className="p-1 sm:p-3"> {props.furnishing}</span> |   <span className="p-1 sm:p-3"> {props.facing}</span></div>
                         <div className="w-full h-16 overflow-auto">
                             <p className=" text-gray-600 text-sm">{props.description}</p>
                         </div>
@@ -75,6 +75,6 @@ const FlatCard: FC<Props> = (props) => {
         </div>
     );
 };
-FlatCard.defaultProps = {
+HouseCard.defaultProps = {
 }
-export default memo(FlatCard);
+export default memo(HouseCard);

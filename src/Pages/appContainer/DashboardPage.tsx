@@ -5,7 +5,7 @@ import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 interface Props {
 }
 
-const Dashboard: FC<Props> = (props) => {
+const DashboardPage: FC<Props> = (props) => {
 
     return (
         <div className="w-full">
@@ -23,6 +23,6 @@ const Dashboard: FC<Props> = (props) => {
         </div>
     );
 };
-Dashboard.defaultProps = {
+DashboardPage.defaultProps = {
 }
-export default memo(Dashboard);
+export default memo(DashboardPage);

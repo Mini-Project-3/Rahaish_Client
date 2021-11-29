@@ -1,7 +1,7 @@
 import { FC, memo, useState } from "react";
-import DropDown from "../DashboardComponents/DropDown";
+import DropDown from "../OtherComponents/DropDown";
 import LOGO from "../../images/Logo.png"
-import DropdownPro from "../DashboardComponents/DropdownPro";
+import DropdownPro from "../OtherComponents/DropdownPro";
 interface Props {
 }
 const PrimaryNav: FC<Props> = (props) => {

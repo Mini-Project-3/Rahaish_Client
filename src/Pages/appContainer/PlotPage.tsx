@@ -1,12 +1,14 @@
 import { FC, memo, useEffect, useState } from "react";
+import MainCard from "../../Components/OtherComponents/WishlistCard";
 import Footer from "../../Components/SharedComponents/Footer";
+import Seachbar from "../../Components/SharedComponents/Seachbar";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import axios from "axios";
 import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
-import FlatCard from "../../Components/SharedComponents/FlatCard";
+import PlotCard from "../../Components/PlotComponents/PlotCard";
 interface Props {
 }
-const Flat: FC<Props> = (props) => {
+const PlotPage: FC<Props> = (props) => {
     const token = localStorage.getItem(LS_AUTH_TOKEN);
     console.log("Token ", token)
 
@@ -14,7 +16,7 @@ const Flat: FC<Props> = (props) => {
 
     useEffect(() => {
         async function fetchData() {
-            const url = BASE_URL + "/my-flat";
+            const url = BASE_URL + "/my-plot";
             try {
                 const response = await axios.get(url, { headers: { 'Content-Type': 'application/json', 'Authorization': token! } });
                 console.log(response.data);
@@ -28,44 +30,36 @@ const Flat: FC<Props> = (props) => {
     return (
         <div className="w-full">
             <div className="pt-20 pb-10 px-4">
-                <WelcomeHeader theme="bg-flat"></WelcomeHeader>
+                <WelcomeHeader theme="bg-plot"></WelcomeHeader>
             </div>
 
-            <div className="min-h-screen justify-center items-center py-20">
-
+            <div className="min-h-screen  justify-center items-center py-20">
                 {
                     response?.map((item) => {
-                        return <FlatCard
+                        return <PlotCard
                             propertyName={item?.name}
                             image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
                             address={item?.address}
                             city={item?.city}
                             status={item?.status}
-                            rent={item?.rent}
-                            bath={item?.bathroom}
+                            price={item?.price}
+                            length={item?.length}
+                            width={item?.width}
                             area={item?.area}
                             description={item?.description}
-                            furnishing={item?.furnishing}
-                            contact={item?.contact}
-                            floor={item?.floor}
-                            bed={item?.bedroom}
-
+                            openFaces={item?.openFaces}
                         />
                     })
                 }
 
 
             </div>
-
-
             <div className="pt-10">
                 <Footer></Footer>
             </div>
-
-
         </div>
     );
 };
-Flat.defaultProps = {
+PlotPage.defaultProps = {
 }
-export default memo(Flat);
+export default memo(PlotPage);
