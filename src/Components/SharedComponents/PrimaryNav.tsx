@@ -8,7 +8,7 @@ const PrimaryNav: FC<Props> = (props) => {
     const [isOpen1, setIsOpen1] = useState(false);
     return (
         <div className="sticky top-0 z-10 ">
-            <div className="flex justify-between p-2 bg-primary  sm:pl-10 sm:pr-10">
+            <div className="flex justify-between p-2 bg-gray-900  sm:pl-10 sm:pr-10">
                 <button className="flex ">
                     <img className="h-10" src={LOGO} alt="" />
                     <h1 className="text-2xl font-semibold text-white pl-4">Rahaish</h1>

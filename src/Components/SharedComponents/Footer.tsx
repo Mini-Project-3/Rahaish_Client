@@ -4,11 +4,11 @@ interface Props {
 const Footer: FC<Props> = (props) => {
     return (
         <>
-            <div className="text-sm md:text-sm lg:text-lg bg-gray-700 h-screen w-full">
+            <div className="text-sm md:text-sm lg:text-lg bg-gray-900 h-screen w-full">
 
                 <div className="flex flex-col sm:flex-row overflow-hidden justify-between px-10 pt-5">
 
-                    <div className="w-full sm:w-1/4 py-5 px-2 hover:bg-gray-900 md:hover:bg-black">
+                    <div className="w-full sm:w-1/4 py-5 px-2 ">
                         <div className="flex justify-between relative ">
                             <div className="text-xl md:text-sm lg:text-xl font-serif text-white font-medium md:font-semibold lg:font-bold">Rahaish</div>
                             <div className="visible sm:invisible"><svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -19,7 +19,7 @@ const Footer: FC<Props> = (props) => {
                         <div className="invisible sm:visible absolute sm:relative text-xs md:text-base font-serif pt-5 text-gray-400">A house is made of bricks and beams. A home is made of hopes and dreams !!</div>
                     </div>
 
-                    <div className="py-5 px-2 hover:bg-gray-900 md:hover:bg-black">
+                    <div className="py-5 px-2 ">
                         <div className="flex justify-between ">
                             <div className="text-xl md:text-sm lg:text-xl font-serif relative text-white font-medium md:font-semibold lg:font-bold">Useful Links</div>
                             <div className="visible sm:invisible"><svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -36,7 +36,7 @@ const Footer: FC<Props> = (props) => {
                         </div>
                     </div>
 
-                    <div className="py-5 px-2 hover:bg-gray-900 md:hover:bg-black">
+                    <div className="py-5 px-2 ">
                         <div className="flex justify-between">
                             <div className="text-xl md:text-sm lg:text-xl font-serif relative text-white font-medium md:font-semibold lg:font-bold">Privacy</div>
                             <div className="visible sm:invisible"><svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -52,7 +52,7 @@ const Footer: FC<Props> = (props) => {
                         </div>
                     </div>
 
-                    <div className="py-5 px-2 hover:bg-gray-900 md:hover:bg-black">
+                    <div className="py-5 px-2 ">
                         <div className=" flex justify-between">
                             <div className="text-xl md:text-sm lg:text-xl font-serif text-white font-medium md:font-semibold lg:font-bold relative">Have a Question?</div>
                             <div className="visible sm:invisible"><svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" viewBox="0 0 20 20" fill="currentColor">
