@@ -104,7 +104,7 @@ const SignupPage: FC<Props> = (props) => {
 									</div>
 									<div className="h-6 ">{touched.email && <div className=" text-red-500 text-xs ">{errors.email}</div>}</div>
 									<div className="mb-4 md:flex md:justify-between">
-										<div className="mb-4 md:mr-2 md:mb-0 md:w-1/2">
+										<div className="mb-4 md:mr-2 md:mb-0 ">
 											<label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="password">
 												Password
 											</label>
@@ -136,7 +136,7 @@ const SignupPage: FC<Props> = (props) => {
 											className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
 											type="submit"
 										>
-											Sign In
+											Sign Up
 										</button>
 									</div>
 									<hr className="mb-6 border-t" />

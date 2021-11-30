@@ -26,7 +26,7 @@ const HouseTitle: FC<Props> = (props) => {
                     <p className=" text-lg text-gray-400 font-medium">{props.address}, {props.city}</p>
                 </div>
                 <div className=" pt-6  text-center">
-                    <p> <span className=" text-3xl font-bold p-1 ">₹{props.price}</span></p>
+                    <p> <span className=" text-3xl font-bold p-1 ">₹{props.price}</span> <span className=" text-base text-purple font-medium">  EMI starts at ₹7.41 K </span></p>
                     <p className=" text-gray-400 font-medium p-1 text-base"> ₹ {(parseInt(props.price) * 100000 / parseInt(props.area)).toFixed(2)} per sqft</p>
                     <button className="px-3 py-3 bg-greenHousing">Contact Seller</button>
                 </div>

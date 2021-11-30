@@ -7,7 +7,7 @@ interface Props {
 const WelcomeNav: FC<Props> = (props) => {
     return (
         <div className="pb-10 sticky z-50 top-0">
-            <nav className="bg-black text-white px-4 p-4">
+            <nav className="bg-gray-900 text-white px-4 p-4">
                 <div className="flex items-center justify-between">
 
                     <div className="flex items-center">
@@ -17,6 +17,8 @@ const WelcomeNav: FC<Props> = (props) => {
                         </button>
                     </div>
                     <div className="flex items-center space-x-6">
+                        <Link to="/aboutus">About</Link>
+                        <Link to="/contact">Contact Us</Link>
                         <Link to="/login"><Button children=" Login " theme="primary"></Button></Link>
                         <Link to="/signup"><Button children="Sign Up" theme="secondary"></Button></Link>
                     </div>

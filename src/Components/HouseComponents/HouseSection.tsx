@@ -1,4 +1,5 @@
 import { FC, memo } from "react";
+import Map from "../SharedComponents/Map";
 interface Props {
     name: string,
     address: string,
@@ -168,6 +169,7 @@ const HouseSection: FC<Props> = (props) => {
                         <div className="bg-white  pl-4 pr-4 md:pl-10 pt-8 ">
 
                             <h1 className="text-2xl font-bold p-4 md:p-6  border-b-2 border-gray-300  ">Locality</h1>
+                            <Map address={props.address} city={props.city}></Map>
                         </div>
                     </div>
 

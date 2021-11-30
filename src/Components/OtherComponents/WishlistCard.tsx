@@ -14,7 +14,7 @@ interface Props {
 const WishlistCard: FC<Props> = (props) => {
     return (
         <div>
-            <div className="max-w-sm border border-primary rounded-md px-6 pt-1 pb-2 shadow-lg transform hover:scale-105 transition duration-500">
+            <div className=" max-w-sm border border-primary rounded-md px-6 pt-1 pb-2 shadow-lg transform hover:scale-105 transition duration-500">
                 <div className="relative">
                     <img className="w-full h-80 rounded-sm" src={props.image} alt="Colors" />
                     <p className="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">{props.type}</p>

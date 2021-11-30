@@ -4,9 +4,9 @@ interface Props {
 }
 const FeaturedColl: FC<Props> = (props) => {
     return (
-        <div className="w-full">
-            <div className="min-h-screen flex  justify-around items-center py-4">
-                <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+        <div className="w-full ">
+            <div className=" flex  justify-around items-center pt-10 pb-10">
+                <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0 ">
                     <WishlistCard
                         propertyName="Radha shayam valley"
                         location="Mathura"

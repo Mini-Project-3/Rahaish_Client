@@ -17,8 +17,8 @@ const WelcomePage: FC<Props> = (props) => {
             <WelcomeNav />
             <WelcomeHeader theme="bg-wel"></WelcomeHeader>
 
-            <div className="pt-10">
-                <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif">Featured Collection</h1>
+            <div className="pt-10 ">
+                <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif pb-0">Featured Collection</h1>
                 <FeaturedColl></FeaturedColl>
             </div>
 
@@ -53,7 +53,7 @@ const WelcomePage: FC<Props> = (props) => {
             </div>
 
             <div className="pt-10 pb-10">
-                <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif">In Spotlight</h1>
+                <h1 className="text-center text-black font-semibold md:text-4xl text-2xl font-serif">In Spotlight</h1>
             </div>
 
             <Jumbotron2></Jumbotron2>

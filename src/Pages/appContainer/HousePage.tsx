@@ -12,13 +12,17 @@ const HousePage: FC<Props> = (props) => {
     console.log("Token ", token)
 
     const [response, setResponse] = useState<any[]>();
+    const [pdata, setpdata] = useState<any[]>();
 
     useEffect(() => {
         async function fetchData() {
-            const url = BASE_URL + "/my-house";
+            const url = BASE_URL + "/all-houses";
             try {
                 const response = await axios.get(url, { headers: { 'Content-Type': 'application/json', 'Authorization': token! } });
                 console.log(response.data);
+                const pdata = response?.data?.slice(0, 2);
+                setpdata(pdata)
+                console.log(pdata)
                 setResponse(response.data)
             } catch (error) {
                 console.log("Not able to fetch data")
@@ -26,6 +30,7 @@ const HousePage: FC<Props> = (props) => {
         }
         fetchData();
     }, [])
+
 
     return (
         <div className="w-full">
@@ -37,6 +42,7 @@ const HousePage: FC<Props> = (props) => {
             <div className="min-h-screen  justify-center items-center py-20">
 
                 {
+
                     response?.map((item) => {
                         return <Link to={`/house/${item.house_id}`}> <HouseCard
                             propertyName={item?.name}
