@@ -17,8 +17,7 @@ const WelcomeNav: FC<Props> = (props) => {
                         </button>
                     </div>
                     <div className="flex items-center space-x-6">
-                        <Link to="/aboutus">About</Link>
-                        <Link to="/contact">Contact Us</Link>
+                        <Link to="/aboutus">About Us</Link>
                         <Link to="/login"><Button children=" Login " theme="primary"></Button></Link>
                         <Link to="/signup"><Button children="Sign Up" theme="secondary"></Button></Link>
                     </div>

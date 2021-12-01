@@ -59,6 +59,7 @@ const WelcomePage: FC<Props> = (props) => {
             <Jumbotron2></Jumbotron2>
 
             <Jumbotron1></Jumbotron1>
+            <iframe className="h-screen w-full p-10" src="https://www.youtube.com/embed/mb8s4Hsqzyw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
             <div className="pt-10">
                 <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif">Our Team</h1>

@@ -1,5 +1,7 @@
 import { FC, memo } from "react";
 import { Route, Switch } from "react-router-dom";
+import WelcomeNav from "../../Components/WelcomeComponents/WelcomeNav";
+import Aboutus from "./Aboutus";
 import ForgotPassPage from "./ForgotPassPage";
 import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
@@ -11,13 +13,13 @@ const Auth: FC<Props> = (props) => {
     return (
         <div>
             <Switch>
-                <Route path="/signup">
+                <Route exact path="/signup">
                     <SignupPage></SignupPage>
                 </Route>
-                <Route path="/login">
+                <Route exact path="/login">
                     <LoginPage></LoginPage>
                 </Route>
-                <Route path="/forgotPassword">
+                <Route exact path="/forgotPassword">
                     <ForgotPassPage></ForgotPassPage>
                 </Route>
             </Switch>
