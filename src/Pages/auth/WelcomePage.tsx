@@ -8,7 +8,7 @@ import Jumbotron1 from "../../Components/WelcomeComponents/Jumbotron1";
 import Jumbotron2 from "../../Components/WelcomeComponents/Jumbotron2";
 import RoomCards from "../../Components/WelcomeComponents/RoomCards";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
-import WelcomeNav from "../../Components/WelcomeComponents/WelcomeNav";
+import WelcomeNav from "../../Components/NavbarComponents/WelcomeNav";
 interface Props {
 }
 const WelcomePage: FC<Props> = (props) => {

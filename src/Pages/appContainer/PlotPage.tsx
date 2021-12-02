@@ -6,6 +6,7 @@ import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import axios from "axios";
 import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
 import PlotCard from "../../Components/PlotComponents/PlotCard";
+import { Link } from "react-router-dom";
 interface Props {
 }
 const PlotPage: FC<Props> = (props) => {
@@ -33,10 +34,11 @@ const PlotPage: FC<Props> = (props) => {
                 <WelcomeHeader theme="bg-plot"></WelcomeHeader>
             </div>
 
+
             <div className="min-h-screen  justify-center items-center py-20">
                 {
                     response?.map((item) => {
-                        return <PlotCard
+                        return <Link to={`/plot/${item.plot_id}`} ><PlotCard
                             propertyName={item?.name}
                             image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
                             address={item?.address}
@@ -49,6 +51,7 @@ const PlotPage: FC<Props> = (props) => {
                             description={item?.description}
                             openFaces={item?.openFaces}
                         />
+                        </Link>
                     })
                 }
 

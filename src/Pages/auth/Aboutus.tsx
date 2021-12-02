@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import WelcomeNav from "../../Components/WelcomeComponents/WelcomeNav";
+import WelcomeNav from "../../Components/NavbarComponents/WelcomeNav";
 interface Props {
 }
 const Aboutus: FC<Props> = (props) => {

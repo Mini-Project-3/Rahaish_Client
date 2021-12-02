@@ -1,11 +1,11 @@
 import axios from "axios";
 import { FC, memo, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import ContactOwnerForm from "../../Components/SharedComponents/ContactOwnerForm";
 import HouseSection from "../../Components/HouseComponents/HouseSection";
-import SectionsNav from "../../Components/SharedComponents/SectionsNav";
+import SectionsNav from "../../Components/NavbarComponents/SectionsNav";
 import HouseTitle from "../../Components/HouseComponents/HouseTitle";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
+import ContactHouse from "../../Components/HouseComponents/ContactHouse";
 interface Props {
 }
 const HouseId: FC<Props> = (props) => {
@@ -32,7 +32,7 @@ const HouseId: FC<Props> = (props) => {
       <div className=" md:sticky  bg-white z-20 top-24 absolute invisible md:visible  "><SectionsNav></SectionsNav></div>
       <div className=" flex">
         <div className=" w-full md:w-4/5 "><HouseSection name={response?.name} address={response?.address} city={response?.city} price={response?.price} area={response?.area} facing={response?.facing} bed={response?.bedroom} bath={response?.bathroom} description={response?.description} floor={response?.floor}></HouseSection></div>
-        <div className=" md:w-3/5 top-32 absolute invisible md:visible md:sticky "><ContactOwnerForm contact={response?.contact}></ContactOwnerForm></div>
+        <div className=" md:w-3/5 top-32 absolute invisible md:visible md:sticky "><ContactHouse house_id={+id} contact={response?.contact}></ContactHouse></div>
       </div>
     </div >
   );

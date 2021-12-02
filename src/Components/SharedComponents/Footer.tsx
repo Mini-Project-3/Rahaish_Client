@@ -5,7 +5,7 @@ interface Props {
 const Footer: FC<Props> = (props) => {
     return (
         <>
-            <div className="text-sm md:text-sm lg:text-lg bg-gray-900 h-screen w-full">
+            <div className="text-sm md:text-sm lg:text-lg border-2 border-white bg-gray-900 h-screen w-full">
 
                 <div className="flex flex-col sm:flex-row overflow-hidden justify-between px-10 pt-5">
 

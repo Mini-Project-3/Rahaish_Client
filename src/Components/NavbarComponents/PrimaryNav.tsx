@@ -14,8 +14,8 @@ const PrimaryNav: FC<Props> = (props) => {
                     <img className="h-10" src={LOGO} alt="" />
                     <h1 className="text-2xl font-semibold text-white pl-4">Rahaish</h1>
                 </button>
-                <div className="space-x-5">
-                    <Link to="/wishlist"><button className="text-gray-100 font-bold pb-4 ">
+                <div className="">
+                    <Link to="/wishlist"><button className="text-gray-100 font-bold pb-4 pr-8 ">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
@@ -24,7 +24,7 @@ const PrimaryNav: FC<Props> = (props) => {
                     <button onClick={() => setIsOpen1(!isOpen1)} className="pt-2">
                         <img className="border-0 rounded h-7 w-7 cursor-pointer " src="https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/07/Cool-Boys-Girls-Stylish-Dp-1.jpg" alt="" />
                     </button>
-                    <div className="absolute mt-14 -ml-28 z-50">{isOpen1 && <DropdownPro></DropdownPro>}</div>
+                    <div className="absolute mt-14 -ml-14 z-50">{isOpen1 && <DropdownPro></DropdownPro>}</div>
                 </div>
             </div>
         </div>

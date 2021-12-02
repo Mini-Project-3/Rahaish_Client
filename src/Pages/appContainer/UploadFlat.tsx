@@ -29,6 +29,7 @@ const UploadFlat: FC<Props> = (props) => {
             const url = BASE_URL + "/flat-upload";
             const response = await axios.post(url, data);
             window.location.href = "/dashboard"
+            alert("Your flat uploaded successfully")
         },
     }
     )

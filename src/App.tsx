@@ -31,7 +31,7 @@ function App() {
           <Route path={["/privacy"]}>
             <Privacy></Privacy>
           </Route>
-          <Route path={["/dashBoard", "/flat", "/house", "/plot", "/wishlist", "/uploadplot", "/uploadflat", "/uploadhouse", "/uploadplot", "/house/:id", "/flat/:id"]} exact>
+          <Route path={["/dashBoard", "/flat", "/house", "/plot", "/wishlist", "/uploadplot", "/uploadflat", "/uploadhouse", "/uploadplot", "/house/:id", "/flat/:id", "/plot/:id", "/profile"]} exact>
             {token ? <AppContainer></AppContainer> : <Redirect to="/login" />}
           </Route>
         </Switch>

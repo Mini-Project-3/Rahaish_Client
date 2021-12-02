@@ -1,11 +1,11 @@
 import axios from "axios";
 import { FC, memo, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import ContactOwnerForm from "../../Components/SharedComponents/ContactOwnerForm";
-import SectionsNav from "../../Components/SharedComponents/SectionsNav";
+import SectionsNav from "../../Components/NavbarComponents/SectionsNav";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 import FlatTitle from "../../Components/FlatComponents/FlatTitle";
 import FlatSection from "../../Components/FlatComponents/FlatSection";
+import ContactFlat from "../../Components/FlatComponents/ContactFlat";
 interface Props {
 }
 const FlatId: FC<Props> = (props) => {
@@ -32,7 +32,7 @@ const FlatId: FC<Props> = (props) => {
             <div className=" md:sticky  bg-white z-20 top-24 absolute invisible md:visible  "><SectionsNav></SectionsNav></div>
             <div className=" flex">
                 <div className=" w-full md:w-4/5 "><FlatSection name={response?.name} address={response?.address} city={response?.city} rent={response?.rent} area={response?.area} furnishing={response?.furnishing} bed={response?.bedroom} bath={response?.bathroom} description={response?.description} floor={response?.floor}></FlatSection></div>
-                <div className=" md:w-3/5 top-32 absolute invisible md:visible md:sticky "><ContactOwnerForm contact={response?.contact}></ContactOwnerForm></div>
+                <div className=" md:w-3/5 top-32 absolute invisible md:visible md:sticky "><ContactFlat contact={response?.contact} flat_id={+id}></ContactFlat></div>
             </div>
         </div >
     );

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
-import { Link } from "react-router-dom";
 import { BASE_URL } from "../../Constants/constants";
 interface Props {
 
@@ -29,10 +28,10 @@ const UploadHouse: FC<Props> = (props) => {
             const url = BASE_URL + "/house-upload";
             const response = await axios.post(url, data);
             window.location.href = "/dashboard"
+            alert("Your house uploaded successfully")
         },
     }
     )
-
     return (
         <div className="flex space-x-4 mx-auto justify-center font-mono ">
             <div className="invisible lg:visible absolute lg:relative  w-1/2  mt-10  "><img className="p-10 h-full" src="https://profiles.sulekha.com/mstore/24036103/albums/default/thumbnailfull/flats.jpg" alt="" /></div>

@@ -1,9 +1,9 @@
 import { FC, memo, useState } from "react";
 import { Switch, Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import SecondaryNav from "../../Components/SharedComponents/SecondaryNav";
-import SideBar from "../../Components/SharedComponents/SideBar";
-import PrimaryNav from "../../Components/SharedComponents/PrimaryNav";
+import SecondaryNav from "../../Components/NavbarComponents/SecondaryNav";
+import SideBar from "../../Components/NavbarComponents/SideBar";
+import PrimaryNav from "../../Components/NavbarComponents/PrimaryNav";
 import WishlistPage from "./WishlistPage";
 import UploadHouse from "./UploadHouse";
 import UploadPlot from "./UploadPlot";
@@ -14,6 +14,9 @@ import HousePage from "./HousePage";
 import PlotPage from "./PlotPage";
 import HouseId from "./HouseId";
 import FlatId from "./FlatId";
+import PlotCard from "../../Components/PlotComponents/PlotCard";
+import PlotId from "./PlotId";
+import ProfilePage from "./ProfilePage";
 
 interface Props {
 }
@@ -55,6 +58,12 @@ const AppContainer: FC<Props> = (props) => {
                         </Route>
                         <Route exact path="/flat/:id">
                             <FlatId></FlatId>
+                        </Route>
+                        <Route exact path="/plot/:id">
+                            <PlotId></PlotId>
+                        </Route>
+                        <Route exact path="/profile">
+                            <ProfilePage></ProfilePage>
                         </Route>
                     </Switch>
                 </div>

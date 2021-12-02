@@ -1,8 +1,29 @@
-import { FC, memo } from "react";
+import axios from "axios";
+import { FC, memo, useEffect, useState } from "react";
+import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
 interface Props {
   contact: string
+  house_id: number;
 }
-const ContactOwnerForm: FC<Props> = (props) => {
+const ContactHouse: FC<Props> = (props) => {
+  const token = localStorage.getItem(LS_AUTH_TOKEN);
+  console.log("Token ", token)
+  const [houseResponse, setResponse] = useState<any>();
+
+
+  useEffect(() => {
+    async function fetchData() {
+      const url = BASE_URL + "/house-creator";
+      try {
+        const houseResponse = await axios.get(url, { headers: { 'Content-Type': 'application/json', 'Authorization': token! }, params: { house_id: props.house_id } });
+        setResponse(houseResponse.data)
+      } catch (error) {
+        console.log("Not able to fetch data")
+      }
+    }
+    fetchData();
+
+  }, [])
   return (
     <div className=" md:sticky top-32 bg-gray-100">
       <div className="md:px-20 py-4 invisible md:visible absolute md:relative ">
@@ -20,7 +41,7 @@ const ContactOwnerForm: FC<Props> = (props) => {
             <div className="flex space-x-7 pt-3">
               <img className="rounded-full h-12 w-12" src="https://image.shutterstock.com/image-photo/portrait-happy-mid-adult-man-260nw-1812937819.jpg" alt="" />
               <div>
-                <h1 className="font-semibold text-gray-800">Ajay Singhal</h1>
+                <h1 className="font-semibold text-gray-800">{houseResponse?.firstName} {houseResponse?.lastName}</h1>
                 <p className="text-gray-500">Owner</p>
                 <p className="font-bold">+91 {props.contact}</p>
               </div>
@@ -38,14 +59,10 @@ const ContactOwnerForm: FC<Props> = (props) => {
               </div>
             </form>
           </div>
-          <div className="flex space-x-1 pt-6 pb-6 ">
+          <div className="flex space-x-1 pt-6 pb-2 ">
             <input className="font-bold mt-1 bg-purple" type="checkbox" name="" id="" />
-            <div >
-              <p className="font-semibold font-serif sm:text-sm text-xs ">I agree to be contacted by Housing and other owner via</p>
-
-              <img className="h-6 w-6" src="https://img.icons8.com/color/48/000000/whatsapp.png" />
-              <p className="font-semibold font-serif sm:text-sm text-xs">WhatsApp,SMS,phone,email etc</p>
-
+            <div className="">
+              <p className="font-semibold font-serif sm:text-sm text-xs ">I agree to be contacted by Housing and other owner via WhatsApp , SMS , phone , email etc</p>
             </div>
           </div>
           <button className="border-0 border-purple bg-purple h-14 w-full hover:bg-indigo-800 ">
@@ -58,7 +75,7 @@ const ContactOwnerForm: FC<Props> = (props) => {
     </div>
   );
 };
-ContactOwnerForm.defaultProps = {
+ContactHouse.defaultProps = {
 }
-export default memo(ContactOwnerForm);
+export default memo(ContactHouse);
 export { };

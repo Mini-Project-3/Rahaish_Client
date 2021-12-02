@@ -13,11 +13,10 @@ interface Props {
     status: string,
     openFaces: string,
     description: string,
-
 }
 const PlotCard: FC<Props> = (props) => {
     return (
-        <div className="px-5 pb-5">
+        <div className="px-5 pb-5 cursor-pointer">
             <div className=" p-5 hover:shadow-md border border-gray-700">
                 <div className=" flex  flex-col md:flex-row">
                     <div className="  md:w-1/3">

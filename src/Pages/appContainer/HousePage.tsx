@@ -12,9 +12,9 @@ interface Props {
 const HousePage: FC<Props> = (props) => {
     const token = localStorage.getItem(LS_AUTH_TOKEN);
     console.log("Token ", token)
-
     const [response, setResponse] = useState<any[]>();
     const [sResponse, setSResponse] = useState<any[]>();
+
     useEffect(() => {
         async function fetchData() {
             const url = BASE_URL + "/all-houses";
@@ -30,6 +30,7 @@ const HousePage: FC<Props> = (props) => {
 
     let searchResult: any[] = [];
 
+
     return (
         <div className="w-full">
 
@@ -39,22 +40,25 @@ const HousePage: FC<Props> = (props) => {
                         <div className="w-10/12">
                             <div className="w-full bg-gray-300 flex justify-center items-center">
                                 <div className="container mx-auto bg-purple-200 rounded-lg p-4 md:p-14">
-                                    <form>
+                                    <form >
                                         <h1 className="text-center font-bold text-purple-900 text-xl sm:text-3xl md:text-4xl pb-8">Welcome back, continue your home search</h1>
                                         <div className=" mx-auto sm:flex items-center bg-white rounded-lg overflow-hidden px-2 md:py-1 justify-between">
-                                            <input className="text-base text-gray-400 flex-grow outline-none px-6 py-4 sm:py-1 sm:px-2 " placeholder="Search here" type="text" onChange={(e) => {
-                                                response?.map((res) => {
-                                                    if (res.city.toLowerCase().includes(e.target.value.toLowerCase()) || res.name.toLowerCase().includes(e.target.value.toLowerCase())) {
-                                                        searchResult.push(res);
-                                                        setSResponse(searchResult);
-                                                    }
-                                                })
-                                            }} />
+
+                                            <input className="text-base text-gray-400 flex-grow outline-none px-6 py-4 sm:py-1 sm:px-2 " placeholder="Search here" type="text"
+                                                onChange={(e) => {
+                                                    response?.map((res) => {
+                                                        if (res.city.toLowerCase().includes(e.target.value.toLowerCase()) || res.name.toLowerCase().includes(e.target.value.toLowerCase())) {
+                                                            searchResult.push(res);
+                                                            setSResponse(searchResult);
+                                                        }
+
+                                                    })
+                                                }}
+                                            />
                                             <div className="flex items-center px-2  space-x-2 sm:space-x-4 mx-auto p-1">
                                                 <select className="text-base text-gray-800 outline-none border-2 px-4 py-1 rounded-lg ">
                                                     <option value="location" selected>Location</option>
                                                     <option value="name">Name</option>
-                                                    <option value="owner">Owner</option>
                                                 </select>
                                                 <Button children="Search" theme="primary"></Button>
                                             </div>
@@ -66,6 +70,7 @@ const HousePage: FC<Props> = (props) => {
                     </div>
                 </div>
             </div>
+
 
             <div className="min-h-screen justify-center items-center py-20">
                 {sResponse?.map((r) => {
@@ -91,11 +96,9 @@ const HousePage: FC<Props> = (props) => {
                 }
             </div>
 
-
             <div className="">
-                <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif pb-0">ALL HOUSES Collection</h1>
+                <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif pb-0">ALL HOUSES COLLECTION</h1>
             </div>
-
 
             <div className="min-h-screen  justify-center items-center py-20">
 
