@@ -17,7 +17,7 @@ const PlotPage: FC<Props> = (props) => {
 
     useEffect(() => {
         async function fetchData() {
-            const url = BASE_URL + "/my-plot";
+            const url = BASE_URL + "/all-plots";
             try {
                 const response = await axios.get(url, { headers: { 'Content-Type': 'application/json', 'Authorization': token! } });
                 console.log(response.data);

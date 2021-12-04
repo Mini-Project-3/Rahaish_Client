@@ -39,7 +39,7 @@ const AppContainer: FC<Props> = (props) => {
                             <HousePage theme={"property"}></HousePage>
                         </Route>
                         <Route exact path="/flat">
-                            <FlatPage></FlatPage>
+                            <FlatPage theme={"flat"}></FlatPage>
                         </Route>
                         <Route exact path="/wishlist">
                             <WishlistPage></WishlistPage>

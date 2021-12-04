@@ -51,7 +51,6 @@ const HousePage: FC<Props> = (props) => {
                                                             searchResult.push(res);
                                                             setSResponse(searchResult);
                                                         }
-
                                                     })
                                                 }}
                                             />

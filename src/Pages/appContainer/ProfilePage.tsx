@@ -25,7 +25,7 @@ const ProfileCard: FC<Props> = (props) => {
     <div className="mx-auto">
       <div className="flex justify-center flex-col sm:flex-row  h-full w-full items-center  ">
         <div className="">
-          <img className="sm:h-80 h-72 sm:w-full  border-1 rounded-full border-gray-300 p-11" src="https://www.kindpng.com/picc/m/136-1369892_avatar-people-person-business-user-man-character-avatar.png" alt="" />
+          <img className="sm:h-80 h-72 sm:w-full  border-1 rounded-full border-gray-300 p-11" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZJ8945Nowb5Wu0dQcjyFilQAhpboXZOOBpvkbP_l-FeWWhV9sRdXb3NVsHLP804PBumE&usqp=CAU" alt="" />
         </div>
         <div className=" p-4 sm:p-0 ">
           <div className="flex space-x-9 sm:py-9 py-2 ">

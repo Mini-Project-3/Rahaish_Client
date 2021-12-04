@@ -22,7 +22,7 @@ const PrimaryNav: FC<Props> = (props) => {
                     </button>
                     </Link>
                     <button onClick={() => setIsOpen1(!isOpen1)} className="pt-2">
-                        <img className="border-0 rounded h-7 w-7 cursor-pointer " src="https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/07/Cool-Boys-Girls-Stylish-Dp-1.jpg" alt="" />
+                        <img className="border-0 rounded h-7 w-7 cursor-pointer " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZJ8945Nowb5Wu0dQcjyFilQAhpboXZOOBpvkbP_l-FeWWhV9sRdXb3NVsHLP804PBumE&usqp=CAU" alt="" />
                     </button>
                     <div className="absolute mt-14 -ml-14 z-50">{isOpen1 && <DropdownPro></DropdownPro>}</div>
                 </div>

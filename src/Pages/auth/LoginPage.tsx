@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 interface Props {
@@ -105,8 +106,12 @@ const LoginPage: FC<Props> = (props) => {
 											Forgot Password?
 										</a>
 									</div>
+									<div className="text-center pt-5 ">
+										<Link to="/" className="underline rounded-md  inline-block text-lg  text-gray-900 align-baseline hover:text-blue-800">Back to Welcome Page</Link>
+									</div>
 								</form>
 							</div>
+
 						</div>
 					</div>
 				</div>
