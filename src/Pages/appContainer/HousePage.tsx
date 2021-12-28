@@ -1,6 +1,5 @@
 import { FC, memo, useEffect, useState } from "react";
 import Footer from "../../Components/SharedComponents/Footer";
-import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 import axios from "axios";
 import HouseCard from "../../Components/HouseComponents/HouseCard";
@@ -14,6 +13,7 @@ const HousePage: FC<Props> = (props) => {
     console.log("Token ", token)
     const [response, setResponse] = useState<any[]>();
     const [sResponse, setSResponse] = useState<any[]>();
+    const [display, setDisplay] = useState<Boolean>();
 
     useEffect(() => {
         async function fetchData() {
@@ -29,7 +29,6 @@ const HousePage: FC<Props> = (props) => {
     }, [])
 
     let searchResult: any[] = [];
-
 
     return (
         <div className="w-full">
@@ -50,6 +49,7 @@ const HousePage: FC<Props> = (props) => {
                                                         if (res.city.toLowerCase().includes(e.target.value.toLowerCase()) || res.name.toLowerCase().includes(e.target.value.toLowerCase())) {
                                                             searchResult.push(res);
                                                             setSResponse(searchResult);
+                                                            setDisplay(true);
                                                         }
                                                     })
                                                 }}
@@ -71,7 +71,7 @@ const HousePage: FC<Props> = (props) => {
             </div>
 
 
-            <div className="min-h-screen justify-center items-center py-20">
+            {display && <div className="min-h-screen justify-center items-center py-20">
                 {sResponse?.map((r) => {
                     console.log(r)
                     return <Link to={`/house/${r.house_id}`}> <HouseCard
@@ -94,7 +94,7 @@ const HousePage: FC<Props> = (props) => {
                 })
                 }
             </div>
-
+            }
             <div className="">
                 <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif pb-0">ALL HOUSES COLLECTION</h1>
             </div>

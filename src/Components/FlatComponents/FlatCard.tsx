@@ -57,7 +57,7 @@ const FlatCard: FC<Props> = (props) => {
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9A3s6FOJk-erF1D65VQx_NWjX2AEuxN7kSw&usqp=CAU" alt="" />
                         </div>
                         <div className="pl-2">
-                            <h1 className=" font-semibold ">Mitali Varshney</h1>
+                            <h1 className=" font-semibold ">FLAT OWNER</h1>
                             <div className="text-white bg-green-500 text-sm rounded-sm">VERIFIED OWNER</div>
                         </div>
                     </div>

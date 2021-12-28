@@ -3,6 +3,10 @@ import Button from "./Button";
 interface Props {
 }
 const Seachbar: FC<Props> = (props) => {
+    function a() {
+        alert("Please Login/Signup first");
+
+    }
     return (
 
         <div className="w-full bg-gray-300 flex justify-center items-center">
@@ -17,7 +21,7 @@ const Seachbar: FC<Props> = (props) => {
                                 <option value="name">Name</option>
                                 <option value="owner">Owner</option>
                             </select>
-                            <Button children="Search" theme="primary"></Button>
+                            <button onClick={() => a()}><Button children="Search" theme="primary"></Button></button>
                         </div>
                     </div>
                 </form>

@@ -1,5 +1,4 @@
 import { FC, memo, useState } from "react";
-import DropDown from "../OtherComponents/DropDown";
 import LOGO from "../../images/Logo.png"
 import DropdownPro from "../OtherComponents/DropdownPro";
 import { Link } from "react-router-dom";

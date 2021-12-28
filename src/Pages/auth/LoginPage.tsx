@@ -101,7 +101,7 @@ const LoginPage: FC<Props> = (props) => {
 									<div className="text-center">
 										<a
 											className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-											href="/forgoPassword"
+											href="/forgotPassword"
 										>
 											Forgot Password?
 										</a>

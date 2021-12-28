@@ -9,6 +9,10 @@ import Jumbotron2 from "../../Components/WelcomeComponents/Jumbotron2";
 import RoomCards from "../../Components/WelcomeComponents/RoomCards";
 import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import WelcomeNav from "../../Components/NavbarComponents/WelcomeNav";
+import Chauhan from "../../images/Chauhan.jpg"
+import Mitali from "../../images/Mitali.jpg"
+import Kanika from "../../images/Kanika.jpg"
+import Khushi from "../../images/Khushi.jpg"
 interface Props {
 }
 const WelcomePage: FC<Props> = (props) => {
@@ -65,10 +69,10 @@ const WelcomePage: FC<Props> = (props) => {
                 <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif">Our Team</h1>
             </div>
             <div className="md:flex pb-10 pt-10">
-                <AgentCard name="Mitali Varshney" designation="MERN Stack Developer" imag="https://pixinvent.com/materialize-material-design-admin-template/app-assets/images/user/12.jpg"></AgentCard>
-                <AgentCard name="Ayush Chauhan" designation="Full Stack Developer" imag="https://i.pinimg.com/originals/e0/d1/01/e0d1015b32d1aa7061c1b1aad06d916f.jpg"></AgentCard>
-                <AgentCard name="Kanika Varshney" designation="Front End Developer" imag="http://www.helloproject.in/extra-images/profile-img-01.jpg"></AgentCard>
-                <AgentCard name="Khushi Varshney" designation="UI UX Developer" imag="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAL5lx462Rjn-dAsEQHumnRJATsXmXbP2mxHWzbFr_RKitmboHvkL-gnOFfOi-gbyZW60&usqp=CAU"></AgentCard>
+                <AgentCard name="Mitali Varshney" designation="MERN Stack Developer" imag={Mitali}></AgentCard>
+                <AgentCard name="Ayush Chauhan" designation="Full Stack Developer" imag={Chauhan}></AgentCard>
+                <AgentCard name="Kanika Varshney" designation="Front End Developer" imag={Kanika}></AgentCard>
+                <AgentCard name="Khushi Varshney" designation="Front End Developer" imag={Khushi}></AgentCard>
             </div>
 
             <InstaHover />

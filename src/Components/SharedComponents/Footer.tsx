@@ -49,7 +49,7 @@ const Footer: FC<Props> = (props) => {
                             <ul className="text-gray-400">
                                 <li className="pb-1.5 hover:text-white"><Link to="/aboutus">About Us</Link></li>
                                 <li className="pb-1.5 hover:text-white"><Link to="/contact">Contact Us</Link></li>
-                                <li className="pb-1.5 hover:text-white"><Link to="">Terms & Conditions</Link></li>
+                                <li className="pb-1.5 hover:text-white"><Link to="/ter">Terms & Conditions</Link></li>
                                 <li className="pb-1.5 hover:text-white"><Link to="/privacy">Privacy-Policy</Link></li>
                             </ul>
                         </div>

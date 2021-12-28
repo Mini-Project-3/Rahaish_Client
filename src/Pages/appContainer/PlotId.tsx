@@ -8,6 +8,7 @@ import PlotTitle from "../../Components/PlotComponents/PlotTitle";
 import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
 interface Props {
 }
+
 const PlotId: FC<Props> = (props) => {
     const token = localStorage.getItem(LS_AUTH_TOKEN);
     const [response, setResponse] = useState<any>();
@@ -19,6 +20,7 @@ const PlotId: FC<Props> = (props) => {
                 const response = await axios.get(url, { headers: { 'Content-Type': 'application/json', 'Authorization': token! }, params: { plot_id: +id } });
                 console.log(response.data);
                 setResponse(response.data)
+                console.log(response.data)
             } catch (error) {
                 console.log("Not able to fetch data")
             }

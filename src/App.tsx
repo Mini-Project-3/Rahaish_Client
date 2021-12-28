@@ -1,4 +1,3 @@
-import React from 'react';
 //https://reactjs.org/docs/dom-elements.html#style
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import WelcomePage from './Pages/auth/WelcomePage';
@@ -31,6 +30,7 @@ function App() {
           <Route path={["/privacy"]}>
             <Privacy></Privacy>
           </Route>
+
           <Route path={["/dashBoard", "/flat", "/house", "/plot", "/wishlist", "/uploadplot", "/uploadflat", "/uploadhouse", "/uploadplot", "/house/:id", "/flat/:id", "/plot/:id", "/profile"]} exact>
             {token ? <AppContainer></AppContainer> : <Redirect to="/login" />}
           </Route>

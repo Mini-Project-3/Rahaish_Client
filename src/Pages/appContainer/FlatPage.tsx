@@ -1,6 +1,5 @@
 import { FC, memo, useEffect, useState } from "react";
 import Footer from "../../Components/SharedComponents/Footer";
-import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
 import axios from "axios";
 import { LS_AUTH_TOKEN, BASE_URL } from "../../Constants/constants";
 import FlatCard from "../../Components/FlatComponents/FlatCard";
@@ -15,6 +14,7 @@ const FlatPage: FC<Props> = (props) => {
 
     const [response, setResponse] = useState<any[]>();
     const [sResponse, setSResponse] = useState<any[]>();
+    const [display, setDisplay] = useState<Boolean>();
 
     useEffect(() => {
         async function fetchData() {
@@ -48,7 +48,9 @@ const FlatPage: FC<Props> = (props) => {
                                                         if (res.city.toLowerCase().includes(e.target.value.toLowerCase()) || res.name.toLowerCase().includes(e.target.value.toLowerCase())) {
                                                             searchResult.push(res);
                                                             setSResponse(searchResult);
+                                                            setDisplay(true);
                                                         }
+
                                                     })
                                                 }}
                                             />
@@ -69,9 +71,8 @@ const FlatPage: FC<Props> = (props) => {
             </div>
 
 
-            <div className="min-h-screen justify-center items-center py-20">
+            {display && <div className="min-h-screen justify-center items-center py-20">
                 {sResponse?.map((r) => {
-                    console.log(r)
                     return <Link to={`/flat/${r.flat_id}`}> <FlatCard
                         propertyName={r?.name}
                         image="https://5.imimg.com/data5/IZ/CL/AO/SELLER-23127414/independent-house-for-sell-500x500.jpeg"
@@ -91,6 +92,8 @@ const FlatPage: FC<Props> = (props) => {
                 })
                 }
             </div>
+            }
+
 
             <div className="">
                 <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif pb-0">ALL FLATS COLLECTION</h1>

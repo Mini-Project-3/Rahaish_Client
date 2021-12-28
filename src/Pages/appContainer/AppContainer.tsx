@@ -1,4 +1,4 @@
-import { FC, memo, useState } from "react";
+import { FC, memo } from "react";
 import { Switch, Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import SecondaryNav from "../../Components/NavbarComponents/SecondaryNav";
@@ -14,7 +14,6 @@ import HousePage from "./HousePage";
 import PlotPage from "./PlotPage";
 import HouseId from "./HouseId";
 import FlatId from "./FlatId";
-import PlotCard from "../../Components/PlotComponents/PlotCard";
 import PlotId from "./PlotId";
 import ProfilePage from "./ProfilePage";
 
@@ -33,7 +32,7 @@ const AppContainer: FC<Props> = (props) => {
                             <DashboardPage></DashboardPage>
                         </Route>
                         <Route exact path="/plot">
-                            <PlotPage></PlotPage>
+                            <PlotPage theme={"plot"}></PlotPage>
                         </Route>
                         <Route exact path="/house">
                             <HousePage theme={"property"}></HousePage>

@@ -13,7 +13,7 @@ const ContactPlot: FC<Props> = (props) => {
 
     useEffect(() => {
         async function fetchData() {
-            const url = BASE_URL + "/house-creator";
+            const url = BASE_URL + "/plot-creator";
             try {
                 const plotResponse = await axios.get(url, { headers: { 'Content-Type': 'application/json', 'Authorization': token! }, params: { plot_id: props.plot_id } });
                 setResponse(plotResponse.data)
@@ -39,7 +39,7 @@ const ContactPlot: FC<Props> = (props) => {
                     <div className="border-2  w-full  h-96 rounded-lg p-6 shadow-2xl pt-2 ">
                         <h1 className="text-2xl ">Contact Owner</h1>
                         <div className="flex space-x-7 pt-3">
-                            <img className="rounded-full h-12 w-12" src="https://image.shutterstock.com/image-photo/portrait-happy-mid-adult-man-260nw-1812937819.jpg" alt="" />
+                            <img className="rounded-full h-12 w-12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png" alt="" />
                             <div>
                                 <h1 className="font-semibold text-gray-800">{plotResponse?.firstName} {plotResponse?.lastName}</h1>
                                 <p className="text-gray-500">Owner</p>

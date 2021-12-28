@@ -39,7 +39,7 @@ const ContactHouse: FC<Props> = (props) => {
           <div className="border-2  w-full  h-96 rounded-lg p-6 shadow-2xl pt-2 ">
             <h1 className="text-2xl ">Contact Owner</h1>
             <div className="flex space-x-7 pt-3">
-              <img className="rounded-full h-12 w-12" src="https://image.shutterstock.com/image-photo/portrait-happy-mid-adult-man-260nw-1812937819.jpg" alt="" />
+              <img className="rounded-full h-12 w-12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png" alt="" />
               <div>
                 <h1 className="font-semibold text-gray-800">{houseResponse?.firstName} {houseResponse?.lastName}</h1>
                 <p className="text-gray-500">Owner</p>
@@ -62,7 +62,7 @@ const ContactHouse: FC<Props> = (props) => {
           <div className="flex space-x-1 pt-6 pb-2 ">
             <input className="font-bold mt-1 bg-purple" type="checkbox" name="" id="" />
             <div className="">
-              <p className="font-semibold font-serif sm:text-sm text-xs ">I agree to be contacted by Housing and other owner via WhatsApp , SMS , phone , email etc</p>
+              <p className="font-semibold font-serif sm:text-sm text-xs ">I agree to be contacted by Rahaish and other owner via WhatsApp , SMS , phone , email etc</p>
             </div>
           </div>
           <button className="border-0 border-purple bg-purple h-14 w-full hover:bg-indigo-800 ">

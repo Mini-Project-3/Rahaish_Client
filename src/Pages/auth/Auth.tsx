@@ -1,7 +1,5 @@
 import { FC, memo } from "react";
 import { Route, Switch } from "react-router-dom";
-import WelcomeNav from "../../Components/NavbarComponents/WelcomeNav";
-import Aboutus from "./Aboutus";
 import ForgotPassPage from "./ForgotPassPage";
 import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";

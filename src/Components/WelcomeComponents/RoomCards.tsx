@@ -24,7 +24,7 @@ const RoomCards: FC<Props> = (props) => {
                 </div>
                 <h1 className="text-yellow text-2xl group-hover:text-white text-center font-sans pb-4">{props.Rs}<sub className="font-serif text-gray-500 text-sm  group-hover:text-black "> per month</sub></h1>
                 <h1 className="text-3xl text-center pb-5">{props.type}</h1>
-                <button className="text-center group-hover:bg-white group-hover:border-white border-2 p-2 flex space-x-1 items-center mx-auto">View All Details <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button onClick={() => alert("Please Login/ Signup")} className="text-center group-hover:bg-white group-hover:border-white border-2 p-2 flex space-x-1 items-center mx-auto">View All Details <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg> </button>
             </div>

@@ -20,7 +20,7 @@ const PlotCard: FC<Props> = (props) => {
             <div className=" p-5 hover:shadow-md border border-gray-700">
                 <div className=" flex  flex-col md:flex-row">
                     <div className="  md:w-1/3">
-                        <img className=" h-60 w-full" src="https://media.istockphoto.com/photos/europe-modern-complex-of-residential-buildings-picture-id1165384568?k=20&m=1165384568&s=612x612&w=0&h=CAnAr3uJtmkr0IQ2EPgm0IBoo8oCm-FEYEtyor8X_9I=" alt="" />
+                        <img className=" h-60 w-full" src="https://5.imimg.com/data5/FD/BL/MY-11964470/residential-plots-500x500.jpg" alt="" />
                     </div>
                     <div className=" md:w-2/3 sm:pl-4 items-center mx-auto pt-4 md:pt-0">
                         <h1 className=" font-bold text-lg">{props.propertyName}</h1>
@@ -55,7 +55,7 @@ const PlotCard: FC<Props> = (props) => {
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9A3s6FOJk-erF1D65VQx_NWjX2AEuxN7kSw&usqp=CAU" alt="" />
                         </div>
                         <div className="pl-2">
-                            <h1 className=" font-semibold ">Mitali Varshney</h1>
+                            <h1 className=" font-semibold ">PLOT OWNER</h1>
                             <div className="text-white bg-green-500 text-sm rounded-sm">VERIFIED OWNER</div>
                         </div>
                     </div>

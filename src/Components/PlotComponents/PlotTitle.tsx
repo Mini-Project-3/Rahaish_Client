@@ -30,8 +30,8 @@ const PlotTitle: FC<Props> = (props) => {
                 </div>
             </div>
             <div className="flex bg-gray-400 space-x-2 md:p-7 h-full">
-                <img className="w-1/2" src="https://media.istockphoto.com/photos/bohemian-living-room-interior-3d-render-picture-id1182454657?k=20&m=1182454657&s=612x612&w=0&h=1xEsm7BqeicA8jYk9KlerUtGsAgzzo530l5Ak1HJdnc=" alt="" />
-                <img className="w-1/2" src="https://media.istockphoto.com/photos/modern-architecture-design-100-for-housebungalow-picture-id474917902?k=20&m=474917902&s=612x612&w=0&h=xNBHbDwkBOyIVmxkdskHJbJTZz2qQpbtSVDvGf6WHOo=" alt="" />
+                <img className="w-1/2" src="https://gruhamasthu.com/admin/optionsimg/plots.jpg" alt="" />
+                <img className="w-1/2" src="https://teja12.kuikr.com/is/a/c/880x425/gallery_images/original/cf6111f83625f00.gif" alt="" />
             </div>
             <div className=" flex flex-col md:flex-row  md:justify-between px-20 py-10 text-center justify-center">
                 <div className=" md:border-r-2 md:border-gray-300  p-2 md:p-5">

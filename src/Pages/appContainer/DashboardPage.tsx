@@ -1,7 +1,7 @@
 import { FC, memo, useEffect, useState } from "react";
 import Footer from "../../Components/SharedComponents/Footer";
 import BouncerCard from "../../Components/OtherComponents/BouncerCard";
-import WelcomeHeader from "../../Components/WelcomeComponents/WelcomeHeader";
+import WishlistCard from "../../Components/OtherComponents/WishlistCard";
 interface Props {
 }
 
@@ -15,7 +15,7 @@ const DashboardPage: FC<Props> = (props) => {
                     <p>WELCOME TO RAHAISH</p>
                 </div>
                 <div className="text-center text-3xl font-serif">
-                    <p>A New Vision Of Luxury Apartments and Services</p>
+                    <p>A New Vision Of Luxury Property</p>
                 </div>
                 <div className="flex justify-center ">
                     <div className=" font-serif sm:space-x-1 p-5 space-y-1 sm:space-y-0 text-xl sm:text-base  sm:flex-row flex-wrap sm:flex-nowrap flex flex-col  ">
@@ -62,15 +62,6 @@ const DashboardPage: FC<Props> = (props) => {
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
             <div className="p-10">
                 <div className=" flex flex-col lg:flex-row">
                     <div className=" flex h-full  lg:w-1/2 ">
@@ -90,6 +81,46 @@ const DashboardPage: FC<Props> = (props) => {
                     </div>
                 </div>
             </div>
+
+            <div className="">
+                <h1 className="text-center text-black font-semibold md:text-3xl text-2xl font-serif pb-0">UPCOMING PROJECTS</h1>
+            </div>
+
+            <div className="min-h-screen flex  justify-around items-center py-20">
+                <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+                    <WishlistCard
+                        propertyName="Shayam valley"
+                        location="Mathura"
+                        price="4.5 k"
+                        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKgu6g0EDcefqKdtOeQeHLAfbTM-RESCRfHQ&usqp=CAU"
+                        type="Rent"
+                        bed={4}
+                        bath={5}
+                        area={1000}
+                    ></WishlistCard>
+                    <WishlistCard
+                        propertyName="The Paradise"
+                        location="Alighar"
+                        price="35 lakhs"
+                        image="https://is1-2.housingcdn.com/4f2250e8/b99c98d2f3b89e994b607314a3d1f892/v5/fs/ayya_aathiguru-velachery-chennai-ayya_flats__builder_pvt_ltd.jpg"
+                        type="Sale"
+                        bed={4}
+                        bath={4}
+                        area={1500}
+                    ></WishlistCard>
+                    <WishlistCard
+                        propertyName="Basera"
+                        location="Noida"
+                        price="56 lakhs"
+                        image="https://is1-3.housingcdn.com/4f2250e8/d34af5a992d5eda29fc1924b6587329b/v0/fs/sri_agathiya_flats-vengaivasal_chennai-chennai-anu_builders_pvt_ltd.jpg"
+                        type="Sale"
+                        bed={4}
+                        bath={2}
+                        area={1600}
+                    ></WishlistCard>
+                </div>
+            </div>
+
             <div>
                 <BouncerCard></BouncerCard>
             </div>
