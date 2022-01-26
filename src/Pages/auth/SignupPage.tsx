@@ -8,7 +8,7 @@ import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
 interface Props {
 }
 const SignupPage: FC<Props> = (props) => {
-	const { handleSubmit, getFieldProps, touched, isSubmitting, errors, isValidating } = useFormik({
+	const { handleSubmit, getFieldProps, touched, errors, } = useFormik({
 		initialValues: {
 			email: "",
 			password: "",
@@ -25,7 +25,7 @@ const SignupPage: FC<Props> = (props) => {
 				.min(2, 'Too Short!')
 				.max(50, 'Too Long!')
 				.required('This field is required'),
-			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
+			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_]+)@([a-zA-Z0-9_]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
 			password: yup.string().matches(
 				/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
 				"must contain at least 8 chars, 1 upper, 1 number and 1 special"

@@ -13,7 +13,7 @@ const LoginPage: FC<Props> = (props) => {
 			password: ""
 		},
 		validationSchema: yup.object().shape({
-			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
+			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_]+)@([a-zA-Z0-9_]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
 			password: yup.string().required("This field is required").min(8, ({ min }) => `Atleast ${min} characters`)
 		}),
 		onSubmit: async (data) => {
@@ -111,7 +111,6 @@ const LoginPage: FC<Props> = (props) => {
 									</div>
 								</form>
 							</div>
-
 						</div>
 					</div>
 				</div>

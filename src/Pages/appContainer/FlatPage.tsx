@@ -28,6 +28,7 @@ const FlatPage: FC<Props> = (props) => {
             }
         }
         fetchData();
+        // eslint-disable-next-line
     }, [])
     let searchResult: any[] = [];
     return (
@@ -44,6 +45,7 @@ const FlatPage: FC<Props> = (props) => {
 
                                             <input className="text-base text-gray-400 flex-grow outline-none px-6 py-4 sm:py-1 sm:px-2 " placeholder="Search here" type="text"
                                                 onChange={(e) => {
+                                                    // eslint-disable-next-line
                                                     response?.map((res) => {
                                                         if (res.city.toLowerCase().includes(e.target.value.toLowerCase()) || res.name.toLowerCase().includes(e.target.value.toLowerCase())) {
                                                             searchResult.push(res);

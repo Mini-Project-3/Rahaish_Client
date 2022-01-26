@@ -22,7 +22,7 @@ const ContactPlot: FC<Props> = (props) => {
             }
         }
         fetchData();
-
+        // eslint-disable-next-line
     }, [])
     return (
         <div className=" md:sticky top-32 bg-gray-100">

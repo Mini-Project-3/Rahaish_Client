@@ -25,6 +25,7 @@ const HouseId: FC<Props> = (props) => {
       }
     }
     fetchData();
+    // eslint-disable-next-line
   }, [])
   return (
     <div className="p-3 w-full " >

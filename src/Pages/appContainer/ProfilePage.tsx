@@ -20,6 +20,7 @@ const ProfileCard: FC<Props> = (props) => {
       }
     }
     fetchData();
+    // eslint-disable-next-line
   }, [])
   return (
     <div className="mx-auto">

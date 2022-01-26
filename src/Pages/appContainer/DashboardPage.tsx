@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useState } from "react";
+import { FC, memo } from "react";
 import Footer from "../../Components/SharedComponents/Footer";
 import BouncerCard from "../../Components/OtherComponents/BouncerCard";
 import WishlistCard from "../../Components/OtherComponents/WishlistCard";

@@ -26,7 +26,7 @@ const UploadFlat: FC<Props> = (props) => {
         },
         onSubmit: async (data) => {
             const url = BASE_URL + "/flat-upload";
-            const response = await axios.post(url, data);
+            await axios.post(url, data);
             window.location.href = "/dashboard"
             alert("Your flat uploaded successfully")
         },
@@ -122,7 +122,7 @@ const UploadFlat: FC<Props> = (props) => {
                             </div>
                         </div> */}
                         <div className="flex justify-end md:mt-36">
-                            <a href="#"><span className="px-6 py-2 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600"><button type="submit">Upload & Submit</button></span> </a>
+                            <button type="submit"><span className="px-6 py-2 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600">Upload & Submit</span></button>
                         </div>
                     </div>
 

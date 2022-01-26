@@ -30,10 +30,10 @@ const Footer: FC<Props> = (props) => {
                         </div>
                         <div className="text-xs md:text-base font-serif pt-5 invisible sm:visible absolute sm:relative">
                             <ul className="text-gray-400">
-                                <li className="pb-1.5 hover:text-white"><a href="">Blog</a></li>
-                                <li className="pb-1.5 hover:text-white"><a href="">Categories</a></li>
-                                <li className="pb-1.5 hover:text-white"><a href="">Amenities</a></li>
-                                <li className="pb-1.5 hover:text-white"><a href="">Gift Card</a></li>
+                                <li className="pb-1.5 hover:text-white cursor-pointer">Blog</li>
+                                <li className="pb-1.5 hover:text-white cursor-pointer">Categories</li>
+                                <li className="pb-1.5 hover:text-white cursor-pointer">Amenities</li>
+                                <li className="pb-1.5 hover:text-white cursor-pointer">Gift Card</li>
                             </ul>
                         </div>
                     </div>
@@ -64,26 +64,26 @@ const Footer: FC<Props> = (props) => {
                         </div>
                         <div className="text-xs md:text-base font-serif pt-5 invisible sm:visible absolute sm:relative">
                             <ul className="text-gray-400">
-                                <div className="flex pb-2 hover:text-white">
-                                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <div className="flex pb-2 hover:text-white cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                                    </svg></a>
-                                    <li className="pl-2"><a href="">GLA University,Mathura,India</a></li>
+                                    </svg>
+                                    <li className="pl-2">GLA University,Mathura,India</li>
                                 </div>
 
-                                <div className="flex pb-2 hover:text-white">
-                                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <div className="flex pb-2 hover:text-white cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                    </svg></a>
-                                    <li className="pl-2"><a href="">+91 9999999999</a></li>
+                                    </svg>
+                                    <li className="pl-2">+91 9999999999</li>
                                 </div>
 
-                                <div className="flex hover:text-white">
-                                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <div className="flex hover:text-white cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                                    </svg></a>
-                                    <li className="pl-2"><a href="">info@gmail.com</a></li>
+                                    </svg>
+                                    <li className="pl-2">info@gmail.com</li>
                                 </div>
 
                             </ul>
@@ -106,11 +106,7 @@ const Footer: FC<Props> = (props) => {
                         <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                     </svg>
 
-
-
                 </div>
-
-
                 <div className="text-sm flex text-gray-400  justify-center font-serif">
                     Copyright © 2021 All rights reserved
                 </div>

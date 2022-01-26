@@ -9,6 +9,7 @@ const Map: FC<Props> = (props) => {
             <iframe
                 className="w-full h-96 pt-4 "
                 loading="lazy"
+                title="map location"
                 allowFullScreen
                 src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyC0wl6K0ld283MaUOGIRF8dD0DnQAkwo8k&q=" + props.address + props.city}>
             </iframe>
