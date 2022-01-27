@@ -21,7 +21,7 @@ const LoginPage: FC<Props> = (props) => {
 			const response = await axios.post(url, data);
 			if (response.status === 200) {
 				localStorage.setItem(LS_AUTH_TOKEN, response.data.token);
-				window.location.href = "/forgotPassword";
+				window.location.href = "/dashboard";
 			}
 			else {
 				console.log(response.data);
