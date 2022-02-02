@@ -66,11 +66,11 @@ const UploadHouse: FC<Props> = (props) => {
     )
     return (
         <div className="flex space-x-4 mx-auto justify-center font-mono ">
-            <div className="invisible lg:visible absolute lg:relative  w-1/2  mt-10  "><img className="p-10 h-full" src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+            <div className="invisible lg:visible absolute lg:relative  w-1/2    "><img className="p-10 h-full" src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
             <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6  bg-secondary rounded-md shadow-md dark:bg-gray-800 mt-4">
                 <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your House</h1>
                 <form className="p-2 md:p-4" onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 gap-3 mt-4 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Name of House</label>
