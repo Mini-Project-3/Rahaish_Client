@@ -2,12 +2,14 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
 import { BASE_URL } from "../../Constants/constants";
+import * as yup from "yup";
+
 interface Props {
 
 }
 const UploadHouse: FC<Props> = (props) => {
 
-    const { handleSubmit, getFieldProps } = useFormik({
+    const { handleSubmit, getFieldProps , touched, errors } = useFormik({
         initialValues: {
             name: "",
             price: "",
@@ -24,6 +26,36 @@ const UploadHouse: FC<Props> = (props) => {
             description: "",
             // fileUpload: "",
         },
+        validationSchema: yup.object().shape({
+            name:yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only')
+            .min(2, 'Too Short!')
+            .max(20, 'Too Long!')
+            .required('This field is required'),
+            price: yup.string().matches(/^[0-9\.]+$/, 'Enter Numbers only').max(8,"Rent not more than  digits").required('This field is required'),
+            address: yup.string()
+            .min(2, 'Too Short!')
+            .max(25, 'Too Long!')
+            .required('This field is required'),
+            city:yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only')
+            .min(3, 'Not a valid city')
+            .max(10, 'Enter a valid city')
+            .required('This field is required'),
+            contact:yup.string().matches(/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,"Enter a valid number")
+            .min(10, 'Enter a valid number')
+            .max(13,"Not a valid number")
+            .required('This field is required'),
+            area: yup.string().matches(/^[0-9\.]+$/, 'Enter Numbers only')
+            .min(2, 'Too Short!')
+            .max(10, 'Too Long!')
+            .required('This field is required'),
+            floor: yup.number().required('This field is required').max(25, "Not Authorized by government"),
+            bedroom:  yup.number().required('This field is required').max(20,"Enter the valid information"),
+            bathroom: yup.number().required('This field is required').max(20,"Enter the valid information"),
+            status: yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only').required('This field is required').max(15,"Only 15 characters allowed"),
+            facing :yup.string().required("This field is required"),
+            furnishing: yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only').required('This field is required').max(15,"Only 15 characters allowed"),
+            description: yup.string().required('This field is required').min(50,"Minimum 50 chars required").max(150,"Not more than 150"),
+		}),
         onSubmit: async (data) => {
             const url = BASE_URL + "/house-upload";
             await axios.post(url, data);
@@ -34,74 +66,87 @@ const UploadHouse: FC<Props> = (props) => {
     )
     return (
         <div className="flex space-x-4 mx-auto justify-center font-mono ">
-            <div className="invisible lg:visible absolute lg:relative  w-1/2  mt-10  "><img className="p-10 h-full" src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+            <div className="invisible lg:visible absolute lg:relative  w-1/2    "><img className="p-10 h-full" src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
             <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6  bg-secondary rounded-md shadow-md dark:bg-gray-800 mt-4">
                 <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your House</h1>
                 <form className="p-2 md:p-4" onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 gap-3 mt-4 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Name of House</label>
                             <input id="name" required {...getFieldProps("name")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter House Name" />
+                            <div className="h-1">{touched.name && <div className=" text-red-500 text-xs">{errors.name}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Price</label>
                             <input id="price" required {...getFieldProps("price")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Price" />
+                            <div className="h-1">{touched.price && <div className=" text-red-500 text-xs">{errors.price}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Address</label>
                             <input id="address" required {...getFieldProps("address")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Address" />
+                            <div className="h-1">{touched.address && <div className=" text-red-500 text-xs">{errors.address}</div>}</div>
                         </div>
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >City</label>
                             <input id="city" required {...getFieldProps("city")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter City" />
+                            <div className="h-1">{touched.city && <div className=" text-red-500 text-xs">{errors.city}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Contact Number</label>
                             <input id="contact" required {...getFieldProps("contact")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter Your Contact number" />
+                            <div className="h-1">{touched.contact && <div className=" text-red-500 text-xs">{errors.contact}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Area of House</label>
                             <input id="area" required {...getFieldProps("area")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter area (sqft)" />
+                            <div className="h-1">{touched.area && <div className=" text-red-500 text-xs">{errors.area}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >No. of Floors</label>
                             <input id="floor" required {...getFieldProps("floor")} type="number" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter No. of floors" />
+                            <div className="h-1">{touched.floor && <div className=" text-red-500 text-xs">{errors.floor}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >No. of Bedrooms</label>
                             <input id="bedroom" required {...getFieldProps("bedroom")} type="number" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter No. of bedrooms" />
+                            <div className="h-1">{touched.bedroom && <div className=" text-red-500 text-xs">{errors.bedroom}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >No. of Bathrooms</label>
                             <input id="bathroom" required {...getFieldProps("bathroom")} type="number" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Enter No. of bathrooms" />
+                            <div className="h-1">{touched.bathroom && <div className=" text-red-500 text-xs">{errors.bathroom}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Status</label>
                             <input id="status" required {...getFieldProps("status")} type="text" className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Completed  or under construction or furnished" />
+                            <div className="h-1">{touched.status && <div className=" text-red-500 text-xs">{errors.status}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Facing Direction</label>
                             <input id="facing" required {...getFieldProps("facing")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Facing direction" />
+                            <div className="h-1">{touched.facing && <div className=" text-red-500 text-xs">{errors.facing}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Furnishing</label>
                             <input id="furnishing" required {...getFieldProps("furnishing")} type="text" className="block w-full px-3 py-2 hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="furnished or unfurnished" />
+                            <div className="h-1">{touched.furnishing && <div className=" text-red-500 text-xs">{errors.furnishing}</div>}</div>
                         </div>
 
                         <div>
                             <label className=" text-sm font-bold text-gray-700" >Description</label>
                             <textarea id="description" required {...getFieldProps("description")} className="block w-full px-3 py-2  hover:shadow-md  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" placeholder="Not more than 50 words..."></textarea>
+                            <div className="h-1">{touched.description && <div className=" text-red-500 text-xs">{errors.description}</div>}</div>
                         </div>
                         {/* <div>
                             <label className="block  text-sm font-bold text-gray-700">
@@ -125,8 +170,8 @@ const UploadHouse: FC<Props> = (props) => {
                                 </div>
                             </div>
                         </div> */}
-                        <div className="flex justify-end md:mt-36">
-                            <span className="px-6 py-2 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600"><button type="submit">Upload & Submit</button></span>
+                        <div className="flex justify-end">
+                            <button type="submit"><span className="px-6 py-3 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600">Upload & Submit</span></button>
                         </div>
                     </div>
 
