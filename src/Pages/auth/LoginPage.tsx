@@ -4,16 +4,17 @@ import { FC, memo } from "react";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
+import { ImSpinner6 } from 'react-icons/im'
 interface Props {
 }
 const LoginPage: FC<Props> = (props) => {
-	const { handleSubmit, getFieldProps, touched, errors } = useFormik({
+	const { handleSubmit, getFieldProps, touched, errors, isSubmitting } = useFormik({
 		initialValues: {
 			email: "",
 			password: ""
 		},
 		validationSchema: yup.object().shape({
-			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_]+)@([a-zA-Z0-9_]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
+			email: yup.string().required().email(),
 			password: yup.string().required("This field is required").min(8, ({ min }) => `Atleast ${min} characters`)
 		}),
 		onSubmit: async (data) => {
@@ -21,7 +22,8 @@ const LoginPage: FC<Props> = (props) => {
 			const response = await axios.post(url, data);
 			if (response.status === 200) {
 				localStorage.setItem(LS_AUTH_TOKEN, response.data.token);
-				window.location.href = "/dashboard";
+				// eslint-disable-next-line
+				setTimeout(window.location.href = "/dashboard", 4000)
 			}
 			else {
 				console.log(response.data);
@@ -52,7 +54,6 @@ const LoginPage: FC<Props> = (props) => {
 											id="email"
 											type="text"
 											placeholder="Email Address"
-											//autoComplete="email"
 											required
 											{...getFieldProps("email")}
 
@@ -81,7 +82,12 @@ const LoginPage: FC<Props> = (props) => {
 											Remember Me
 										</label>
 									</div>
-									<div className="mb-6 text-center">
+									<div className="flex flex-col mb-6 text-center">
+										{isSubmitting ?
+											<div className="mx-auto pb-3">
+												<ImSpinner6 className="animate-spin h-8 w-8"></ImSpinner6>
+											</div> : <div className="h-11"></div>
+										}
 										<button
 											className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
 											type="submit"

@@ -1,20 +1,19 @@
-
 import axios from "axios";
 import { useFormik } from "formik";
 import { FC, memo } from "react";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { BASE_URL, LS_AUTH_TOKEN } from "../../Constants/constants";
+import { ImSpinner6 } from 'react-icons/im'
 interface Props {
 }
 const SignupPage: FC<Props> = (props) => {
-	const { handleSubmit, getFieldProps, touched, errors, } = useFormik({
+	const { handleSubmit, getFieldProps, touched, errors, isSubmitting } = useFormik({
 		initialValues: {
 			email: "",
 			password: "",
 			firstName: "",
 			lastName: "",
-			// c_password: ""
 		},
 		validationSchema: yup.object().shape({
 			firstName: yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only')
@@ -25,12 +24,11 @@ const SignupPage: FC<Props> = (props) => {
 				.min(2, 'Too Short!')
 				.max(50, 'Too Long!')
 				.required('This field is required'),
-			email: yup.string().required("This field is required").matches(/^([a-zA-Z0-9_]+)@([a-zA-Z0-9_]+)\.([a-zA-z]+)$/, "Enter a valid email").email(() => "Enter a valid email"),
+			email: yup.string().required().email(),
 			password: yup.string().matches(
 				/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
 				"must contain at least 8 chars, 1 upper, 1 number and 1 special"
 			).required("This field is required").min(8, ({ min }) => `Atleast ${min} characters`),
-			// c_Password: yup.string().required('This field is required').oneOf([yup.ref("password"), null], "Passwords must match"),
 
 		}),
 		onSubmit: async (data) => {
@@ -38,7 +36,8 @@ const SignupPage: FC<Props> = (props) => {
 			const response = await axios.post(url, data);
 			if (response.status === 200) {
 				localStorage.setItem(LS_AUTH_TOKEN, response.data.token);
-				window.location.href = "/dashboard";
+				// eslint-disable-next-line
+				setTimeout(window.location.href = "/dashboard", 4000)
 			} else {
 				console.log("error");
 			}
@@ -113,26 +112,18 @@ const SignupPage: FC<Props> = (props) => {
 												className="w-full hover:shadow-md px-3 py-2 text-sm leading-tight text-gray-700 border  rounded shadow appearance-none focus:outline-none focus:shadow-outline"
 												id="password"
 												type="password"
-												placeholder="******************"
+												placeholder="Password"
 												{...getFieldProps("password")}
 											/>
 											<div className="h-8 ">{touched.password && <div className="text-red-500 text-xs">{errors.password}</div>}</div>
 										</div>
-										{/* <div className="md:ml-2 md:w-1/2">
-											<label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="c_password">
-												Confirm Password
-											</label>
-											<input
-												className="w-full hover:shadow-md px-3 py-2  text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-												id="c_password"
-												type="password"
-												placeholder="******************"
-												{...getFieldProps("c_password")}
-											/>
-										</div>
-										<div className="h-8">{touched.c_password && <div className="text-red-500 text-xs">{errors.c_password}</div>}</div> */}
 									</div>
-									<div className="mb-6 text-center">
+									<div className="flex flex-col mb-6 text-center">
+										{isSubmitting ?
+											<div className="mx-auto pb-3">
+												<ImSpinner6 className="animate-spin h-8 w-8"></ImSpinner6>
+											</div> : <div className="h-11"></div>
+										}
 										<button
 											className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
 											type="submit"
