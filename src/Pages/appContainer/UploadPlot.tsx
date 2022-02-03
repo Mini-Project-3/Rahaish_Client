@@ -3,10 +3,11 @@ import { useFormik } from "formik";
 import { FC, memo } from "react";
 import { BASE_URL } from "../../Constants/constants";
 import * as yup from "yup";
+import { ImSpinner3 } from "react-icons/im";
 interface Props {
 }
 const UploadPlot: FC<Props> = (props) => {
-    const { handleSubmit, getFieldProps  , touched, errors } = useFormik({
+    const { handleSubmit, getFieldProps  , touched, errors ,isSubmitting} = useFormik({
         initialValues: {
             name: "",
             price: "",
@@ -49,10 +50,12 @@ const UploadPlot: FC<Props> = (props) => {
             width: yup.number().required('This field is required'),
             description: yup.string().required('This field is required').max(150,"Not more than 150"),
 		}),
-        onSubmit: async (data) => {
+        onSubmit: async (data , {setSubmitting}) => {
             const url = BASE_URL + "/plot-upload";
             await axios.post(url, data);
-            window.location.href = "/dashboard"
+            setTimeout(()=>{
+                window.location.href = "/dashboard"
+                },3000);
             alert("Your plot uploaded successfully")
         },
     }
@@ -61,7 +64,7 @@ const UploadPlot: FC<Props> = (props) => {
     return (
         <div className="flex space-x-4 font-mono mx-auto">
             <div className="invisible lg:visible absolute lg:relative  w-1/2 mx-auto   "><img className=" p-10 h-full" src="https://www.novalifespace.in/blog/wp-content/uploads/2020/07/plots-for-sale-in-ayanambakkam.jpeg" alt="" /></div>
-            <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2  md:pl-6  bg-secondary rounded-md shadow-md dark:bg-gray-800 mt-4">
+            <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2  md:pl-6  bg-gray-200 rounded-md shadow-md dark:bg-gray-800 mt-4">
                 <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your Plot</h1>
                 <form className="  p-2 md:p-4" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 mx-auto gap-3  sm:grid-cols-2">
@@ -151,9 +154,12 @@ const UploadPlot: FC<Props> = (props) => {
                                 </div>
                             </div>
                         </div> */}
+                      
+                       
                         <div className="flex justify-end">
-                            <button type="submit"><span className="px-6 py-3 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600">Upload & Submit</span></button>
+                            <button type="submit"><span className="px-6 py-2 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600">Upload & Submit</span></button>
                         </div>
+                        {isSubmitting ? <ImSpinner3 className="animate-spin "></ImSpinner3>:<div className=" h-2"></div>}
                     </div>
 
                 </form>

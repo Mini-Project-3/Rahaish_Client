@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { FC, memo } from "react";
 import { BASE_URL } from "../../Constants/constants";
 import * as yup from "yup";
+import { ImSpinner3 } from "react-icons/im";
 interface Props {
 
 
@@ -54,19 +55,23 @@ const UploadFlat: FC<Props> = (props) => {
             furnishing: yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only').required('This field is required').max(15,"Only 15 characters allowed"),
             description: yup.string().required('This field is required').max(150,"Not more than 150"),
 		}),
-        onSubmit: async (data) => {
+        onSubmit: async (data,{setSubmitting}) => {
             const url = BASE_URL + "/flat-upload";
             await axios.post(url, data);
-            window.location.href = "/dashboard"
+            setTimeout(()=>{
+                window.location.href = "/dashboard"
+                },3000);
+
             alert("Your flat uploaded successfully")
         },
+        
     }
     )
 
     return (
         <div className="flex space-x-4 mx-auto justify-center font-mono  ">
             <div className="invisible lg:visible absolute lg:relative  w-1/2   "><img className="p-10 h-full" src="https://profiles.sulekha.com/mstore/24036103/albums/default/thumbnailfull/flats.jpg" alt="" /></div>
-            <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6  bg-secondary rounded-md shadow-md dark:bg-gray-800 mt-4">
+            <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6 bg-gray-200 rounded-md shadow-md dark:bg-gray-800 mt-4">
                 <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your Flat</h1>
                 <form className="p-2 md:p-4" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 gap-3  md:grid-cols-2">
@@ -163,9 +168,13 @@ const UploadFlat: FC<Props> = (props) => {
                                 </div>
                             </div>
                         </div> */}
+                       
+                        
                         <div className="flex justify-end">
                             <button type="submit"><span className="px-6 py-2 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600">Upload & Submit</span></button>
                         </div>
+                        {isSubmitting ? <ImSpinner3 className="animate-spin "></ImSpinner3>:<div className=" h-2"></div>}
+                        
                     </div>
 
 

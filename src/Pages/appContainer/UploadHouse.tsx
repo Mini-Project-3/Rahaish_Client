@@ -3,13 +3,14 @@ import { useFormik } from "formik";
 import { FC, memo } from "react";
 import { BASE_URL } from "../../Constants/constants";
 import * as yup from "yup";
+import { ImSpinner3 } from "react-icons/im";
 
 interface Props {
 
 }
 const UploadHouse: FC<Props> = (props) => {
 
-    const { handleSubmit, getFieldProps , touched, errors } = useFormik({
+    const { handleSubmit, getFieldProps , touched, errors,isSubmitting } = useFormik({
         initialValues: {
             name: "",
             price: "",
@@ -31,7 +32,7 @@ const UploadHouse: FC<Props> = (props) => {
             .min(2, 'Too Short!')
             .max(20, 'Too Long!')
             .required('This field is required'),
-            price: yup.string().matches(/^[0-9\.]+$/, 'Enter Numbers only').max(8,"Rent not more than  digits").required('This field is required'),
+            price: yup.string().matches(/^[0-9\.]+$/, 'Enter Numbers only').max(20," price not valid").required('This field is required'),
             address: yup.string()
             .min(2, 'Too Short!')
             .max(25, 'Too Long!')
@@ -56,10 +57,12 @@ const UploadHouse: FC<Props> = (props) => {
             furnishing: yup.string().matches(/^[A-Za-z ]*$/, 'Enter Alphabets only').required('This field is required').max(15,"Only 15 characters allowed"),
             description: yup.string().required('This field is required').min(50,"Minimum 50 chars required").max(150,"Not more than 150"),
 		}),
-        onSubmit: async (data) => {
+        onSubmit: async (data ,{setSubmitting}) => {
             const url = BASE_URL + "/house-upload";
             await axios.post(url, data);
-            window.location.href = "/dashboard"
+            setTimeout(()=>{
+                window.location.href = "/dashboard"
+                },3000);
             alert("Your house uploaded successfully")
         },
     }
@@ -67,7 +70,7 @@ const UploadHouse: FC<Props> = (props) => {
     return (
         <div className="flex space-x-4 mx-auto justify-center font-mono ">
             <div className="invisible lg:visible absolute lg:relative  w-1/2    "><img className="p-10 h-full" src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
-            <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6  bg-secondary rounded-md shadow-md dark:bg-gray-800 mt-4">
+            <section className="max-w-2xl  lg:p-5 w-full lg:w-1/2 md:pl-6  bg-gray-200 rounded-md shadow-md dark:bg-gray-800 mt-4">
                 <h1 className=" font-semibold text-2xl text-center text-gray-700 capitalize dark:text-white">Upload Your House</h1>
                 <form className="p-2 md:p-4" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -170,9 +173,12 @@ const UploadHouse: FC<Props> = (props) => {
                                 </div>
                             </div>
                         </div> */}
+                        
+                        
                         <div className="flex justify-end">
-                            <button type="submit"><span className="px-6 py-3 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600">Upload & Submit</span></button>
+                            <button type="submit"><span className="px-6 py-2 leading-5 text-sm font-bold text-white transition-colors duration-200 transform bg-primary rounded-md bg-purple-600 hover:bg-purple-800 focus:outline-none focus:bg-gray-600">Upload & Submit</span></button>
                         </div>
+                        {isSubmitting ? <ImSpinner3 className="animate-spin "></ImSpinner3>:<div className=" h-2"></div>}
                     </div>
 
 
